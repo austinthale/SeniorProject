@@ -24,6 +24,7 @@ public class SelectZone : MonoBehaviour
     public Text guard_number;
     public Text window_number;
     public Text door_amount;
+    public Text assailant_walk_through;
 
 
     // Use this for initialization
@@ -70,12 +71,14 @@ public class SelectZone : MonoBehaviour
     public void writeZoneInfo(GameObject passed_zone)
     {
         currentZone = passed_zone;
-        zoneMenu.text = passed_zone.GetComponent<ZoneAnalysis>().ZoneName;
-        threat_level_slider.value = currentZone.GetComponent<ZoneAnalysis>().threatLevel;
-        threat_level_number.text = currentZone.GetComponent<ZoneAnalysis>().threatLevel.ToString();
-        guard_number.text = currentZone.GetComponent<ZoneAnalysis>().number_guards.ToString();
-        window_number.text = currentZone.GetComponent<ZoneAnalysis>().windows.ToString();
-        door_amount.text = currentZone.GetComponent<ZoneAnalysis>().doors.ToString();
+        //print(currentZone.name);
+        zoneMenu.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().ZoneName;
+        threat_level_slider.value = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().threatLevel;
+        threat_level_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().threatLevel.ToString();
+        guard_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().number_guards.ToString();
+        window_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().windows.ToString();
+        door_amount.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().doors.ToString();
+        assailant_walk_through.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().times_assialant_passed_through.ToString();
     }
 
     public void adjustZoneThreatLevel()
@@ -83,4 +86,6 @@ public class SelectZone : MonoBehaviour
         currentZone.GetComponent<ZoneAnalysis>().threatLevel = threat_level_slider.value;
         writeZoneInfo(currentZone);
     }
+
+    //public void adjust 
 }

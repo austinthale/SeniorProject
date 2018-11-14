@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UserInput : MonoBehaviour {
 
@@ -8,17 +9,22 @@ public class UserInput : MonoBehaviour {
     public GameObject MainCam;
     public float camZoomSpeed = 1;
     public float camDragSpeed = 1;
+    public GameObject gridmanager;
+    public GameObject assailant;
 
     //private
     private Vector3 camDragOrigin;
     private bool isPanning;
-
+    private PlayerController player_controller;
+    private float assailant_speed = 1;
 
 
     // Use this for initialization
     void Start () {
-		
-	}
+        player_controller = assailant.GetComponent<PlayerController>();
+        assailant_speed = assailant.GetComponent<NavMeshAgent>().speed;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -55,7 +61,41 @@ public class UserInput : MonoBehaviour {
                 isPanning = false;
             }
         }
+
         
 
+    }
+
+    public void ToggleView(float option)
+    {
+        if (option == 1) //Zone Mode
+        {
+            ViewReset();
+            gridmanager.SetActive(true);
+            player_controller.IsSimMode = false;
+            List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
+            //assailant.transform.position = assailant.GetComponent<NavMeshAgent>().destination;
+            assailant.GetComponent<NavMeshAgent>().speed = 0;
+            assailant.GetComponent<NavMeshAgent>().isStopped = true;
+        }
+        else if (option == 2) //See through Zones
+        {
+            ViewReset();
+        }
+        else if (option == 3) //No Zone
+        {
+            ViewReset();
+            //player_controller.stopMoving();
+            player_controller.IsSimMode = true;
+            assailant.GetComponent<NavMeshAgent>().isStopped = false;
+            assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
+        }
+    }
+
+    public void ViewReset()
+    {
+        List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
+        player_controller.IsSimMode = false;
+        gridmanager.SetActive(false);
     }
 }
