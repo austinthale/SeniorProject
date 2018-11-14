@@ -11,6 +11,8 @@ public class ZoneAnalysis : MonoBehaviour {
     public float windows = 0;
     public float doors = 0;
 
+    public GameObject trigger;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,4 +23,24 @@ public class ZoneAnalysis : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 10)
+        {
+            times_assialant_passed_through++;
+        }
+        if (other.gameObject.layer == 11 || other.gameObject.layer == 12)
+        {
+            number_guards++;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == 11)
+        {
+            number_guards--;
+        }
+    }
 }

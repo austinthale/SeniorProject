@@ -7,6 +7,7 @@ public class ToggleSelection : MonoBehaviour {
     public Material[] materials = new Material[2]; // Material color for when selected and non-selected
     public Renderer rend; // Rendering the grid square
     public GameObject select_zone;
+    public GameObject trigger;
 
     private bool selected;
 
@@ -32,7 +33,7 @@ public class ToggleSelection : MonoBehaviour {
                 select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().selected = false;
             }
             
-            print(gameObject.name);
+            //print(gameObject.name);
             rend.material = materials[1]; //1 will be index for selected color
             selected = true;
             select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(true);
