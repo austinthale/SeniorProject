@@ -1,0 +1,592 @@
+Zone 27
+Threat Level: 100
+Position: (-30.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 28
+Threat Level: 100
+Position: (-30.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 29
+Threat Level: 100
+Position: (-30.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 30
+Threat Level: 100
+Position: (-30.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 31
+Threat Level: 100
+Position: (-20.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 32
+Threat Level: 100
+Position: (-20.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 33
+Threat Level: 100
+Position: (-20.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 34
+Threat Level: 100
+Position: (-20.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 35
+Threat Level: 100
+Position: (-20.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 36
+Threat Level: 100
+Position: (-20.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 37
+Threat Level: 100
+Position: (-20.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 38
+Threat Level: 100
+Position: (-20.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 39
+Threat Level: 100
+Position: (-20.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 40
+Threat Level: 100
+Position: (-20.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 41
+Threat Level: 100
+Position: (-10.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 42
+Threat Level: 100
+Position: (-10.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 43
+Threat Level: 100
+Position: (-10.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 44
+Threat Level: 100
+Position: (-10.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 45
+Threat Level: 100
+Position: (-10.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 46
+Threat Level: 100
+Position: (-10.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 47
+Threat Level: 100
+Position: (-10.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 48
+Threat Level: 100
+Position: (-10.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 49
+Threat Level: 100
+Position: (-10.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 50
+Threat Level: 100
+Position: (-10.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 51
+Threat Level: 100
+Position: (0.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 52
+Threat Level: 100
+Position: (0.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 53
+Threat Level: 100
+Position: (0.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 54
+Threat Level: 100
+Position: (0.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 55
+Threat Level: 100
+Position: (0.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 56
+Threat Level: 100
+Position: (0.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 57
+Threat Level: 100
+Position: (0.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 58
+Threat Level: 100
+Position: (0.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 59
+Threat Level: 100
+Position: (0.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 60
+Threat Level: 100
+Position: (0.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 61
+Threat Level: 100
+Position: (10.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 62
+Threat Level: 100
+Position: (10.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 63
+Threat Level: 100
+Position: (10.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 64
+Threat Level: 100
+Position: (10.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 65
+Threat Level: 100
+Position: (10.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 66
+Threat Level: 100
+Position: (10.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 67
+Threat Level: 100
+Position: (10.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 68
+Threat Level: 100
+Position: (10.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 69
+Threat Level: 100
+Position: (10.0, 0.0, 30.0)
+Number of Guards: 1
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 70
+Threat Level: 100
+Position: (10.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 71
+Threat Level: 100
+Position: (20.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 72
+Threat Level: 100
+Position: (20.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 73
+Threat Level: 100
+Position: (20.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 74
+Threat Level: 100
+Position: (20.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 75
+Threat Level: 100
+Position: (20.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 76
+Threat Level: 100
+Position: (20.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 77
+Threat Level: 100
+Position: (20.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 78
+Threat Level: 100
+Position: (20.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 79
+Threat Level: 100
+Position: (20.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 80
+Threat Level: 100
+Position: (20.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 81
+Threat Level: 100
+Position: (30.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 82
+Threat Level: 100
+Position: (30.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 83
+Threat Level: 100
+Position: (30.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 84
+Threat Level: 100
+Position: (30.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 85
+Threat Level: 100
+Position: (30.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 86
+Threat Level: 100
+Position: (30.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 87
+Threat Level: 100
+Position: (30.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 88
+Threat Level: 100
+Position: (30.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 89
+Threat Level: 100
+Position: (30.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 90
+Threat Level: 100
+Position: (30.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 91
+Threat Level: 100
+Position: (40.0, 0.0, -50.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 92
+Threat Level: 100
+Position: (40.0, 0.0, -40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 93
+Threat Level: 100
+Position: (40.0, 0.0, -30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 94
+Threat Level: 100
+Position: (40.0, 0.0, -20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 95
+Threat Level: 100
+Position: (40.0, 0.0, -10.0)
+Number of Guards: 0
+Times Assailant passed zone: 435
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 96
+Threat Level: 100
+Position: (40.0, 0.0, 0.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 97
+Threat Level: 100
+Position: (40.0, 0.0, 10.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 98
+Threat Level: 100
+Position: (40.0, 0.0, 20.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 99
+Threat Level: 100
+Position: (40.0, 0.0, 30.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+
+Zone 100
+Threat Level: 100
+Position: (40.0, 0.0, 40.0)
+Number of Guards: 0
+Times Assailant passed zone: 0
+Number of Windows: 0
+Number of Doors: 0
+

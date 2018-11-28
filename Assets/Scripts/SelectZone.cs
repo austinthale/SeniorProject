@@ -83,7 +83,7 @@ public class SelectZone : MonoBehaviour
 
     public void adjustZoneThreatLevel()
     {
-        currentZone.GetComponent<ZoneAnalysis>().threatLevel = threat_level_slider.value;
+        currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().threatLevel = threat_level_slider.value;
         writeZoneInfo(currentZone);
     }
 

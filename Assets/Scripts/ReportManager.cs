@@ -9,11 +9,14 @@ using UnityEngine.UI;
 public class ReportManager : MonoBehaviour {
 
     public GameObject GridManage;
-    public bool run = false;
     public string ReportName = "report.txt";
     public report rep = new report();
     public GameObject Report_Panel;
     public Text Report_Panel_Text;
+    public Text Report_Panel_Text2;
+    public Text Report_Panel_Text3;
+    public Text Report_Panel_Text4;
+    public bool onOff = true;
 
     public report createReport(List<GameObject> zones)
     {
@@ -33,13 +36,14 @@ public class ReportManager : MonoBehaviour {
         return rep;
     }
 
+    public void OnEnable()
+    {
+        onOff = true;
+    }
+
     private void Update()
     {
-        if (run)
-        {
-            SaveReport();
-            run = false;
-        }
+
     }
 
     [ExecuteInEditMode]
@@ -60,6 +64,7 @@ public class ReportManager : MonoBehaviour {
 
     public void readableReport()
     {
+        float amount = rep.zoneNames.Count / 4;
         string temp = "Security Report: " + "\n\n";
         for (int i = 0; i < rep.zoneNames.Count; i++)
         {
@@ -71,10 +76,44 @@ public class ReportManager : MonoBehaviour {
             temp += "Number of Windows: " + rep.windows[i] + "\n";
             temp += "Number of Doors: " + rep.doors[i] + "\n";
             temp += "\n";
+            if (i == amount)
+            {
+                Report_Panel_Text.text = temp;
+                temp = "";
+            }
+            else if (i == (amount*2))
+            {
+                Report_Panel_Text2.text = temp;
+                temp = "";
+            }
+            else if (i == amount*3)
+            {
+                Report_Panel_Text3.text = temp;
+                temp = "";
+            }
+            else if (i == amount*4)
+            {
+                Report_Panel_Text4.text = temp;
+                temp = "";
+            }
         }
         System.IO.File.WriteAllText(Application.dataPath + "/" + "read-able-report.txt", temp);
         Report_Panel.SetActive(true);
-        Report_Panel_Text.text = temp;
+        //Report_Panel_Text.text = temp;
+    }
+
+
+    public void toggleOnOff()
+    {
+        if (onOff)
+        {
+            Report_Panel_Text.text = " ";
+            Report_Panel.SetActive(false);
+        }
+        else
+        {
+            Report_Panel.SetActive(true);
+        }
     }
 
 

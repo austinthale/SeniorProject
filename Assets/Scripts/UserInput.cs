@@ -72,13 +72,9 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset();
             gridmanager.SetActive(true);
-            player_controller.IsSimMode = false;
-            List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
-            //assailant.transform.position = assailant.GetComponent<NavMeshAgent>().destination;
-            assailant.GetComponent<NavMeshAgent>().speed = 0;
-            assailant.GetComponent<NavMeshAgent>().isStopped = true;
+            //List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
         }
-        else if (option == 2) //See through Zones
+        else if (option == 2) //Camera Mode?
         {
             ViewReset();
         }
@@ -97,5 +93,7 @@ public class UserInput : MonoBehaviour {
         List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
         player_controller.IsSimMode = false;
         gridmanager.SetActive(false);
+        assailant.GetComponent<NavMeshAgent>().speed = 0;
+        assailant.GetComponent<NavMeshAgent>().isStopped = true;
     }
 }
