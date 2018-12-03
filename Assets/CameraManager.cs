@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class CameraManager : MonoBehaviour {
 
     public GameObject GridManage;
-    public GameObject CameraPanel;
-    public GameObject Camera_Image;
     public List<Camera> cameraList;
     int index = 0;
 
@@ -22,16 +20,31 @@ public class CameraManager : MonoBehaviour {
 		
 	}
 
-    void nextClicked()
+    public void nextClicked()
     {
-        if (index < cameraList.Count)
+        cameraList[index].gameObject.SetActive(false);
+        if (index < cameraList.Count - 1)
         {
-            //Camera_Image.
             index++;
         }
         else
         {
             index = 0;
         }
+        cameraList[index].gameObject.SetActive(true);
+    }
+
+    public void prevClicked()
+    {
+        cameraList[index].gameObject.SetActive(false);
+        if (index > 0)
+        {
+            index--;
+        }
+        else
+        {
+            index = cameraList.Count - 1;
+        }
+        cameraList[index].gameObject.SetActive(true);
     }
 }
