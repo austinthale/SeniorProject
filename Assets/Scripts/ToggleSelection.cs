@@ -24,7 +24,11 @@ public class ToggleSelection : MonoBehaviour {
         select_zone = GameObject.FindGameObjectWithTag("User Input Manager");
     }
     private void OnMouseDown()
-    { 
+    {
+        toggleZone();     
+    }
+    public void toggleZone()
+    {
         if (!selected)
         {
             if (select_zone.GetComponent<SelectZone>().currentZone != null)
@@ -32,23 +36,23 @@ public class ToggleSelection : MonoBehaviour {
                 select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().rend.material = materials[0];
                 select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().selected = false;
             }
-            
+
             //print(gameObject.name);
             rend.material = materials[1]; //1 will be index for selected color
             selected = true;
             select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(true);
             select_zone.GetComponent<SelectZone>().writeZoneInfo(gameObject);
-            
+
         }
-            
-        else {
+
+        else
+        {
             select_zone.GetComponent<SelectZone>().currentZone = null;
             select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(false);
             rend.material = materials[0];
             selected = false;
             //select_zone.GetComponent<SelectZone>().removeZone(gameObject);
         }
-            
     }
 
 }

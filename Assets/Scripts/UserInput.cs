@@ -11,19 +11,21 @@ public class UserInput : MonoBehaviour {
     public float camDragSpeed = 1;
     public GameObject gridmanager;
     public GameObject assailant;
+    public GameObject secCamCanvas;
+    public GameObject zoneCanvas;
 
     //private
     private Vector3 camDragOrigin;
     private bool isPanning;
     private PlayerController player_controller;
     private float assailant_speed = 1;
-
+    private SelectZone selectZoneScript;
 
     // Use this for initialization
     void Start () {
         player_controller = assailant.GetComponent<PlayerController>();
         assailant_speed = assailant.GetComponent<NavMeshAgent>().speed;
-
+        selectZoneScript = this.gameObject.GetComponent<SelectZone>();
     }
 	
 	// Update is called once per frame
@@ -70,17 +72,21 @@ public class UserInput : MonoBehaviour {
     {
         if (option == 1) //Zone Mode
         {
-            ViewReset();
+            ViewReset(false);
             gridmanager.SetActive(true);
             //List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
         }
-        else if (option == 2) //Camera Mode?
+        else if (option == 2) //Camera Mode
         {
-            ViewReset();
+            ViewReset(true);
+            secCamCanvas.SetActive(true);
+            player_controller.IsSimMode = true;
+            assailant.GetComponent<NavMeshAgent>().isStopped = false;
+            assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
         }
-        else if (option == 3) //No Zone
+        else if (option == 3) //Sim Mode, no zones
         {
-            ViewReset();
+            ViewReset(true);
             //player_controller.stopMoving();
             player_controller.IsSimMode = true;
             assailant.GetComponent<NavMeshAgent>().isStopped = false;
@@ -88,12 +94,20 @@ public class UserInput : MonoBehaviour {
         }
     }
 
-    public void ViewReset()
+    public void ViewReset(bool allowMove)
     {
+        if (selectZoneScript.currentZone != null)
+            selectZoneScript.currentZone.GetComponent<ToggleSelection>().toggleZone();
         List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
-        player_controller.IsSimMode = false;
+
         gridmanager.SetActive(false);
-        assailant.GetComponent<NavMeshAgent>().speed = 0;
-        assailant.GetComponent<NavMeshAgent>().isStopped = true;
+        secCamCanvas.SetActive(false);
+        zoneCanvas.SetActive(false);
+        if (!allowMove) {
+            player_controller.IsSimMode = false;
+            assailant.GetComponent<NavMeshAgent>().speed = 0;
+            assailant.GetComponent<NavMeshAgent>().isStopped = true;
+        }
+        
     }
 }
