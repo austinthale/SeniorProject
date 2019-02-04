@@ -7,8 +7,17 @@ public class CameraEditorManager : EditorManager {
 
     private List<GameObject> camera_list;
     public GameObject camera_prefab;
-    private int index = 0;
+    private int index;
 
+
+    // Use this for initialization
+    void Start()
+    {
+        camera_list = new List<GameObject>();
+        index = 0;
+    }
+
+    // Use for Adding Cameras to the scene 
     public override void Add()
     {
         if (camera_prefab != null)
@@ -19,13 +28,13 @@ public class CameraEditorManager : EditorManager {
         {
             print("camer_prefab is null:::CameraEditorManager--Add()");
         }
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     public override void Delete(int ind)
     {
         camera_list.Remove(camera_list[ind].gameObject);
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     public override void Move()
@@ -34,13 +43,10 @@ public class CameraEditorManager : EditorManager {
         throw new NotImplementedException();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public int GetSize()
+    {
+        return camera_list.Count;
+    }
+
 }

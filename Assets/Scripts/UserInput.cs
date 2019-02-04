@@ -13,6 +13,7 @@ public class UserInput : MonoBehaviour {
     public GameObject assailant;
     public GameObject secCamCanvas;
     public GameObject zoneCanvas;
+    public GameObject editCanvas;
 
     //private
     private Vector3 camDragOrigin;
@@ -92,6 +93,11 @@ public class UserInput : MonoBehaviour {
             assailant.GetComponent<NavMeshAgent>().isStopped = false;
             assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
         }
+        else if (option == 4) //Edit Mode
+        {
+            ViewReset(false);
+            editCanvas.SetActive(true);
+        }
     }
 
     public void ViewReset(bool allowMove)
@@ -102,6 +108,7 @@ public class UserInput : MonoBehaviour {
 
         gridmanager.SetActive(false);
         secCamCanvas.SetActive(false);
+        editCanvas.SetActive(false);
         zoneCanvas.SetActive(false);
         if (!allowMove) {
             player_controller.IsSimMode = false;
