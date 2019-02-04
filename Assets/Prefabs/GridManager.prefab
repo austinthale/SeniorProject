@@ -11,6 +11,36 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1987315106646686}
   m_IsPrefabAsset: 1
+--- !u!1 &1271950941133072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4775836494237272}
+  m_Layer: 0
+  m_Name: WallPlacementList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1913452837646034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4245177844106660}
+  m_Layer: 0
+  m_Name: ZoneList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1987315106646686
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,10 +64,38 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987315106646686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4775836494237272}
+  - {fileID: 4245177844106660}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4245177844106660
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913452837646034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4176023422183006}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4775836494237272
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271950941133072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4176023422183006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114953161254688440
@@ -51,8 +109,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c067d94de4c4e4a95ea5cc2b5df69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goPrefab: {fileID: 1147175507164230, guid: 6006ba4aa445c0746bf9ba1157adf20c, type: 2}
-  gridHeight: 8
-  gridWidth: 8
-  parentObj: {fileID: 0}
+  zonePrefab: {fileID: 1147175507164230, guid: 6006ba4aa445c0746bf9ba1157adf20c, type: 2}
+  WallPlacementPrefab: {fileID: 1024391412670766, guid: 6347c8ea708b8484fa27eb7d8a5a7d06,
+    type: 2}
+  gridHeight: 6
+  gridWidth: 4
+  gridStart: {fileID: 1987315106646686}
+  wallX: {fileID: 1514423565023654, guid: 9b9dafdd87a4e2f4ab269e615a7a0763, type: 2}
+  wallZ: {fileID: 1717416098152986, guid: ed8f37b53e62a7f42b36874afe177dae, type: 2}
+  wallPlacementX: {fileID: 1602121643689182, guid: eea5334ce260b3f46a988e3a10ef1c8d,
+    type: 2}
+  wallPlacementZ: {fileID: 1779225967333926, guid: fcd8959937e85194ea11ffaaefac414e,
+    type: 2}
+  WallParentObject: {fileID: 1271950941133072}
+  zoneList: {fileID: 1913452837646034}
   gridList: []
+  WallPlacementList: []
+  walls: []
+  triggers: []
