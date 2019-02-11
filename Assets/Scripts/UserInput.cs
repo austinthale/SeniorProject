@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class UserInput : MonoBehaviour {
 
@@ -31,13 +32,17 @@ public class UserInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            MainCam.transform.Translate(0, 0, camZoomSpeed * Time.deltaTime);
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
-        {
-            MainCam.transform.Translate(0, 0, -camZoomSpeed * Time.deltaTime);
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+            {
+                MainCam.transform.Translate(0, 0, camZoomSpeed * Time.deltaTime);
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+            {
+                MainCam.transform.Translate(0, 0, -camZoomSpeed * Time.deltaTime);
+
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
