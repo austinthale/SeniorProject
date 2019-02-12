@@ -10,7 +10,8 @@ public class WallEditorManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         WallPlacements = GridManager.GetComponent<GenerateGrid>().WallPlacementList;
-	}
+        Walls = GridManager.GetComponent<GenerateGrid>().walls;
+    }
 
     
 }
