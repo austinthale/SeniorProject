@@ -53,8 +53,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCam: {fileID: 0}
-  camZoomSpeed: 10
-  camDragSpeed: 0.5
+  camZoomSpeed: 50
+  camDragSpeed: 2
+  gridmanager: {fileID: 0}
+  assailant: {fileID: 0}
+  secCamCanvas: {fileID: 0}
+  zoneCanvas: {fileID: 0}
+  editCanvas: {fileID: 0}
+  GeneralEditorManager: {fileID: 0}
 --- !u!114 &114686079368789090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,3 +82,9 @@ MonoBehaviour:
   windows: []
   doors: []
   Zone_Info_Plane: {fileID: 0}
+  threat_level_slider: {fileID: 0}
+  threat_level_number: {fileID: 0}
+  guard_number: {fileID: 0}
+  window_number: {fileID: 0}
+  door_amount: {fileID: 0}
+  assailant_walk_through: {fileID: 0}

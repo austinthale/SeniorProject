@@ -966,6 +966,31 @@ Prefab:
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 534669902}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: gridmanager
+      value: 
+      objectReference: {fileID: 571113365}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: secCamCanvas
+      value: 
+      objectReference: {fileID: 1142221856}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: zoneCanvas
+      value: 
+      objectReference: {fileID: 460576435}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: editCanvas
+      value: 
+      objectReference: {fileID: 1223381774}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: GeneralEditorManager
+      value: 
+      objectReference: {fileID: 1821896506}
     - target: {fileID: 114686079368789090, guid: 8ea150caad89bb94d90a59c17b52fae6,
         type: 2}
       propertyPath: zoneMenu
@@ -1006,46 +1031,6 @@ Prefab:
       propertyPath: assailant_walk_through
       value: 
       objectReference: {fileID: 1218614128}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: gridmanager
-      value: 
-      objectReference: {fileID: 571113365}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: assailant
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: camDragSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: camZoomSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: cameraManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: secCamCanvas
-      value: 
-      objectReference: {fileID: 1142221856}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: zoneCanvas
-      value: 
-      objectReference: {fileID: 460576435}
-    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
-        type: 2}
-      propertyPath: editCanvas
-      value: 
-      objectReference: {fileID: 1223381774}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ea150caad89bb94d90a59c17b52fae6, type: 2}
   m_IsPrefabAsset: 0
@@ -3017,6 +3002,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114336547672256112, guid: 2b2f470b7abb2d4468de74f63f860616,
+        type: 2}
+      propertyPath: wallEditor
+      value: 
+      objectReference: {fileID: 1545425810}
+    - target: {fileID: 114336547672256112, guid: 2b2f470b7abb2d4468de74f63f860616,
+        type: 2}
+      propertyPath: gridManager
+      value: 
+      objectReference: {fileID: 571113365}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2f470b7abb2d4468de74f63f860616, type: 2}
   m_IsPrefabAsset: 0
@@ -4012,6 +4007,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543696070}
   m_CullTransparentMesh: 0
+--- !u!1 &1545425810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1940002613142672, guid: 2b2f470b7abb2d4468de74f63f860616,
+    type: 2}
+  m_PrefabInternal: {fileID: 1116462249}
 --- !u!1 &1564097239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,6 +4495,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1454575660}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1821896506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1367128735520964, guid: 2b2f470b7abb2d4468de74f63f860616,
+    type: 2}
+  m_PrefabInternal: {fileID: 1116462249}
 --- !u!114 &1934152826 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114740814538818958, guid: 8ea4f191e501fdf4581b9fc2f4ecf4f4,

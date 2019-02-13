@@ -15,6 +15,9 @@ public class UserInput : MonoBehaviour {
     public GameObject secCamCanvas;
     public GameObject zoneCanvas;
     public GameObject editCanvas;
+    private List<GameObject> wallList;
+    public GameObject GeneralEditorManager;
+    private GameObject wallmManager;
 
     //private
     private Vector3 camDragOrigin;
@@ -25,6 +28,8 @@ public class UserInput : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        wallmManager = GeneralEditorManager.GetComponent<GeneralEditorManager>().wallEditor;
+        gridmanager = GeneralEditorManager.GetComponent<GeneralEditorManager>().gridManager;
         if (assailant != null)
         {
             player_controller = assailant.GetComponent<PlayerController>();
@@ -83,6 +88,11 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(false);
             gridmanager.GetComponent<GenerateGrid>().zoneList.gameObject.SetActive(true);
+            //make zones selectable
+            foreach (var z in gridmanager.GetComponent<GenerateGrid>().gridList)
+            {
+                z.GetComponent<ToggleSelection>().selectable = true;
+            }
             //List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
         }
         else if (option == 2) //Camera Mode
@@ -100,9 +110,9 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(true);
             //player_controller.stopMoving();
-            player_controller.IsSimMode = true;
             if (assailant != null)
             {
+                player_controller.IsSimMode = true;
                 assailant.GetComponent<NavMeshAgent>().isStopped = false;
                 assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
             }
@@ -111,6 +121,18 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(false);
             editCanvas.SetActive(false);
+            gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(true);
+            foreach (var w in gridmanager.GetComponent<GenerateGrid>().WallPlacementList)
+            {
+                w.gameObject.SetActive(false);
+            }
+            wallmManager.GetComponent<WallEditorManager>().wallPlacementActive = false;
+            //make zones visable but not selectable
+            gridmanager.GetComponent<GenerateGrid>().zoneList.gameObject.SetActive(true);
+            foreach (var z in gridmanager.GetComponent<GenerateGrid>().gridList)
+            {
+                z.GetComponent<ToggleSelection>().selectable = false;
+            }
         }
     }
 
@@ -121,6 +143,7 @@ public class UserInput : MonoBehaviour {
         List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
 
         gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(false);
+        
         gridmanager.GetComponent<GenerateGrid>().zoneList.gameObject.SetActive(false);
         secCamCanvas.SetActive(false);
         editCanvas.SetActive(false);

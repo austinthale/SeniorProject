@@ -8,6 +8,7 @@ public class ToggleSelection : MonoBehaviour {
     public Renderer rend; // Rendering the grid square
     public GameObject select_zone;
     public GameObject trigger;
+    public bool selectable = false;
 
     private bool selected;
 
@@ -29,29 +30,32 @@ public class ToggleSelection : MonoBehaviour {
     }
     public void toggleZone()
     {
-        if (!selected)
+        if (selectable)
         {
-            if (select_zone.GetComponent<SelectZone>().currentZone != null)
+            if (!selected)
             {
-                select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().rend.material = materials[0];
-                select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().selected = false;
+                if (select_zone.GetComponent<SelectZone>().currentZone != null)
+                {
+                    select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().rend.material = materials[0];
+                    select_zone.GetComponent<SelectZone>().currentZone.GetComponent<ToggleSelection>().selected = false;
+                }
+
+                //print(gameObject.name);
+                rend.material = materials[1]; //1 will be index for selected color
+                selected = true;
+                select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(true);
+                select_zone.GetComponent<SelectZone>().writeZoneInfo(gameObject);
+
             }
 
-            //print(gameObject.name);
-            rend.material = materials[1]; //1 will be index for selected color
-            selected = true;
-            select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(true);
-            select_zone.GetComponent<SelectZone>().writeZoneInfo(gameObject);
-
-        }
-
-        else
-        {
-            select_zone.GetComponent<SelectZone>().currentZone = null;
-            select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(false);
-            rend.material = materials[0];
-            selected = false;
-            //select_zone.GetComponent<SelectZone>().removeZone(gameObject);
+            else
+            {
+                select_zone.GetComponent<SelectZone>().currentZone = null;
+                select_zone.GetComponent<SelectZone>().Zone_Info_Plane.SetActive(false);
+                rend.material = materials[0];
+                selected = false;
+                //select_zone.GetComponent<SelectZone>().removeZone(gameObject);
+            }
         }
     }
 

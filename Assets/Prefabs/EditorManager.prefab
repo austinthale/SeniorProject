@@ -201,6 +201,7 @@ MonoBehaviour:
   GridManager: {fileID: 1231032083299874}
   WallPlacements: []
   Walls: []
+  wallPlacementActive: 1
 --- !u!114 &114336547672256112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a454d02bb37b044a87a0a334206d249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 1231032083299874}
+  wallEditor: {fileID: 1940002613142672}
 --- !u!114 &114950941871734156
 MonoBehaviour:
   m_ObjectHideFlags: 1
