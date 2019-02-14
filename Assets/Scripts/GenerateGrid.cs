@@ -22,6 +22,8 @@ public class GenerateGrid : MonoBehaviour
     public GameObject WallParent;
     public GameObject zoneList;
 
+    public GameObject GeneralEditorManager;
+
     //public GameObject[,] argo = new GameObject[gridHeight, gridWidth];
     public List<GameObject> gridList;
     public List<GameObject> WallPlacementList;
@@ -122,6 +124,7 @@ public class GenerateGrid : MonoBehaviour
                     temp.transform.parent = WallPlacementParentObject.transform;
                     GameObject w = temp.GetComponent<WallPlacementEditor>().wall;
                     walls.Add(w);
+                    assignGeneralManager(w);
                     w.transform.parent = WallParent.transform;
                     //temp.GetComponent<WallPlacementEditor>().wall = Instantiate(wallZ, new Vector3(x, y, z), Quaternion.identity);
                     WallPlacementList.Add(temp);
@@ -140,6 +143,7 @@ public class GenerateGrid : MonoBehaviour
                     GameObject w = temp.GetComponent<WallPlacementEditor>().wall;
                     walls.Add(w);
                     w.transform.parent = WallParent.transform;
+                    assignGeneralManager(w);
                     //GameObject w = Instantiate(wallX, new Vector3(x, y, z), Quaternion.identity);
                     //temp.GetComponent<WallPlacementEditor>().wall = w;
                     WallPlacementList.Add(temp);
@@ -153,6 +157,14 @@ public class GenerateGrid : MonoBehaviour
              gridList[k].GetComponent<ZoneAnalysis>().trigger.transform.parent = null;
          }*/
         turnWallsOff();
+    }
+
+    public void assignGeneralManager(GameObject wa)
+    {
+        foreach (var wall in wa.GetComponent<WallEditor>().CameraPlacements)
+        {
+            wall.GetComponent<CameraPlacementEditor>().GeneralEditorManager = GeneralEditorManager;
+        }
     }
 
     public void floorGen()

@@ -1214,6 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1641939006678100}
+  actaulCamera: {fileID: 1960929671243012}
   wall: {fileID: 1449090096106160}
   GeneralEditorManager: {fileID: 0}
   hasCamera: 0
@@ -1246,6 +1247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1243315514923284}
+  actaulCamera: {fileID: 1196852610905138}
   wall: {fileID: 1449090096106160}
   GeneralEditorManager: {fileID: 0}
   hasCamera: 0
