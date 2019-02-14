@@ -7,6 +7,8 @@ public class CameraManager : MonoBehaviour {
 
     public GameObject GridManage;
     public List<Camera> cameraList;
+    public List<GameObject> CameraPlacements;
+    public bool CamPlacementActive = false;
     int index = 0;
 
 
@@ -17,8 +19,42 @@ public class CameraManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown("o"))
+        {
+            toggleCamEditMode();
+        }
+    }
+
+    public void toggleCamEditMode()
+    {
+        if (CamPlacementActive)
+        {
+            foreach (var cam in CameraPlacements)
+            {
+                cam.gameObject.SetActive(false);
+            }
+            CamPlacementActive = false;
+        }
+        else
+        {
+            foreach (var cam in CameraPlacements)
+            {
+                cam.gameObject.SetActive(true);
+            }
+            CamPlacementActive = true;
+        }
+    }
+
+    public void getCurrentCamPlacements()
+    {
+        foreach (var wall in GridManage.GetComponent<GenerateGrid>().walls)
+        {
+            if (wall.gameObject.activeSelf)
+            {
+
+            }
+        }
+    }
 
     public void nextClicked()
     {
