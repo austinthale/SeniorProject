@@ -120,7 +120,7 @@ public class GenerateGrid : MonoBehaviour
                     float x = ((((float)(v3Center.x - gridHeight + i)) * zonePrefab.transform.localScale.x / 2)) - (zonePrefab.transform.localScale.x / 2);
                     float z = (((float)(v3Center.z - gridWidth + j)) * zonePrefab.transform.localScale.z) + zonePrefab.transform.localScale.z * (gridWidth / 2);
                     float y = (wallZ.transform.localScale.y / 2);
-                    GameObject temp = Instantiate(wallPlacementZ, new Vector3(x, .7f, z), Quaternion.identity);
+                    GameObject temp = Instantiate(wallPlacementZ, new Vector3(x, 4.8f, z), Quaternion.identity);
                     temp.transform.parent = WallPlacementParentObject.transform;
                     GameObject w = temp.GetComponent<WallPlacementEditor>().wall;
                     walls.Add(w);
@@ -137,7 +137,7 @@ public class GenerateGrid : MonoBehaviour
                     float x = ((((float)(v3Center.x - gridHeight / 2.0 + i)) * zonePrefab.transform.localScale.x / 2)) - ((0.5f * ((gridWidth / 2) + 1)) * zonePrefab.transform.localScale.x);
                     float z = (((float)(v3Center.z - gridWidth / 2.0 + j)) * zonePrefab.transform.localScale.z) - (zonePrefab.transform.localScale.x / 2);
                     float y = (wallX.transform.localScale.y / 2);
-                    GameObject temp = Instantiate(wallPlacementX, new Vector3(x, .5f, z), Quaternion.identity);
+                    GameObject temp = Instantiate(wallPlacementX, new Vector3(x, 4.8f, z), Quaternion.identity);
                     temp.transform.Rotate(0, 90, 0);
                     temp.transform.parent = WallPlacementParentObject.transform;
                     GameObject w = temp.GetComponent<WallPlacementEditor>().wall;
