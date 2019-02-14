@@ -11,6 +11,8 @@ public class CameraPlacementEditor : MonoBehaviour {
     public bool hasCamera = false;
     public bool on = false;
     private GameObject CameraEditor;
+    private GameObject canvas;
+    EditModePanelEditor editModePanel;
 
     private GameObject cameraParent;
 
@@ -18,6 +20,8 @@ public class CameraPlacementEditor : MonoBehaviour {
     {
        cameraParent = GeneralEditorManager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>().CameraParent;
        CameraEditor = GeneralEditorManager.GetComponent<GeneralEditorManager>().cameraManager;
+       canvas = GeneralEditorManager.GetComponent<GeneralEditorManager>().canvas;
+       editModePanel = canvas.transform.Find("Edit Mode Panel").transform.GetComponent<EditModePanelEditor>();
     }
 
     private void OnMouseDown()
@@ -31,11 +35,16 @@ public class CameraPlacementEditor : MonoBehaviour {
             camera.gameObject.SetActive(true);
             CameraEditor.GetComponent<CameraManager>().cameraList.Add(actaulCamera.GetComponent<Camera>());
             camera.gameObject.transform.parent = cameraParent.transform;
+            if (editModePanel.getDropdownVal() == 1)
+                editModePanel.changePanelView(1);
             on = true;
         }
         else
         {
             camera.gameObject.transform.parent = this.transform;
+            CameraEditor.GetComponent<CameraManager>().cameraList.Remove(actaulCamera.GetComponent<Camera>());
+            if (editModePanel.getDropdownVal() == 1)
+                editModePanel.changePanelView(1);
             camera.gameObject.SetActive(false);
             on = false;
         }

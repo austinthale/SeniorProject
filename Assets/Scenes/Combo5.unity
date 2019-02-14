@@ -2472,6 +2472,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   CameraPlacements: []
+  CameraParent: {fileID: 0}
   CamPlacementActive: 0
 --- !u!4 &730189137
 Transform:

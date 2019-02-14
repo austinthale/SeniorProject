@@ -275,6 +275,7 @@ MonoBehaviour:
   gridManager: {fileID: 1231032083299874}
   wallEditor: {fileID: 1940002613142672}
   cameraManager: {fileID: 1966462557137970}
+  canvas: {fileID: 0}
 --- !u!114 &114872961056739716
 MonoBehaviour:
   m_ObjectHideFlags: 1

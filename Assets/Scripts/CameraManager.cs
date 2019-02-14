@@ -10,12 +10,13 @@ public class CameraManager : MonoBehaviour {
     public List<GameObject> CameraPlacements;
     public GameObject CameraParent;
     public bool CamPlacementActive = false;
-    int index = 0;
+    int index;
 
 
     // Use this for initialization
     void Start () {
-		//foreach()
+        //foreach()
+        index = 0;
 	}
 	
 	// Update is called once per frame
