@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallEditor : MonoBehaviour {
 
     public GameObject placementObject;
+    public List<GameObject> CameraPlacements;
 
 	// Use this for initialization
 	void Start () {
