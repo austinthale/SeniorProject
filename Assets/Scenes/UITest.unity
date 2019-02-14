@@ -509,6 +509,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 185414392}
+    - target: {fileID: 114754168540635812, guid: f58a2191d2285404faa320d6639cb5b7,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 432884536}
+    - target: {fileID: 114630802413385758, guid: f58a2191d2285404faa320d6639cb5b7,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 432884536}
     - target: {fileID: 114235261761315734, guid: f58a2191d2285404faa320d6639cb5b7,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -519,26 +529,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 185414392}
-    - target: {fileID: 114754168540635812, guid: f58a2191d2285404faa320d6639cb5b7,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 432884536}
-    - target: {fileID: 114754168540635812, guid: f58a2191d2285404faa320d6639cb5b7,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: nextClicked
-      objectReference: {fileID: 0}
-    - target: {fileID: 114630802413385758, guid: f58a2191d2285404faa320d6639cb5b7,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 432884536}
-    - target: {fileID: 114630802413385758, guid: f58a2191d2285404faa320d6639cb5b7,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: prevClicked
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58a2191d2285404faa320d6639cb5b7, type: 2}
   m_IsPrefabAsset: 0
