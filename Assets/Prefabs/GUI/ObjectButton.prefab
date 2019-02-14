@@ -166,7 +166,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Camera 1
+  m_Text: Object
 --- !u!222 &222450914059441334
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -215,6 +215,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.35, y: 0}
-  m_SizeDelta: {x: 282.7, y: 47.3}
+  m_AnchoredPosition: {x: 94.847946, y: 0}
+  m_SizeDelta: {x: 189.69589, y: 47.3}
   m_Pivot: {x: 0.5, y: 1}
