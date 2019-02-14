@@ -120,7 +120,7 @@ public class UserInput : MonoBehaviour {
         else if (option == 4) //Edit Mode
         {
             ViewReset(false);
-            editCanvas.SetActive(false);
+            editCanvas.SetActive(true);
             gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(true);
             foreach (var w in gridmanager.GetComponent<GenerateGrid>().WallPlacementList)
             {
