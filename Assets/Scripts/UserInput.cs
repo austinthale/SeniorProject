@@ -99,9 +99,10 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(true);
             secCamCanvas.SetActive(true);
-            player_controller.IsSimMode = true;
+
             if (assailant != null)
             {
+                player_controller.IsSimMode = true;
                 assailant.GetComponent<NavMeshAgent>().isStopped = false;
                 assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
             }
