@@ -24,8 +24,17 @@ public class WallPlacementEditor : MonoBehaviour
         }
         else
         {
+            turnOffCameras();
             wall.gameObject.SetActive(false);
             on = false;
+        }
+    }
+    public void turnOffCameras()
+    {
+        foreach (var cam in wall.GetComponent<WallEditor>().CameraPlacements)
+        {
+            if (cam.GetComponent<CameraPlacementEditor>().on)
+            cam.GetComponent<CameraPlacementEditor>().camOff();
         }
     }
 }

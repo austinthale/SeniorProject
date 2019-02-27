@@ -32,21 +32,30 @@ public class CameraPlacementEditor : MonoBehaviour {
     {
         if (!on)
         {
-            camera.gameObject.SetActive(true);
-            CameraEditor.GetComponent<CameraManager>().cameraList.Add(actaulCamera.GetComponent<Camera>());
-            camera.gameObject.transform.parent = cameraParent.transform;
-            if (editModePanel.getDropdownVal() == 1)
-                editModePanel.changePanelView(1);
-            on = true;
+            camOn();
         }
         else
         {
-            camera.gameObject.transform.parent = this.transform;
-            CameraEditor.GetComponent<CameraManager>().cameraList.Remove(actaulCamera.GetComponent<Camera>());
-            if (editModePanel.getDropdownVal() == 1)
-                editModePanel.changePanelView(1);
-            camera.gameObject.SetActive(false);
-            on = false;
+            camOff();
         }
+    }
+
+    public void camOff()
+    {
+        camera.gameObject.transform.parent = this.transform;
+        CameraEditor.GetComponent<CameraManager>().cameraList.Remove(actaulCamera.GetComponent<Camera>());
+        if (editModePanel.getDropdownVal() == 1)
+            editModePanel.changePanelView(1);
+        camera.gameObject.SetActive(false);
+        on = false;
+    }
+    public void camOn()
+    {
+        camera.gameObject.SetActive(true);
+        CameraEditor.GetComponent<CameraManager>().cameraList.Add(actaulCamera.GetComponent<Camera>());
+        camera.gameObject.transform.parent = cameraParent.transform;
+        if (editModePanel.getDropdownVal() == 1)
+            editModePanel.changePanelView(1);
+        on = true;
     }
 }
