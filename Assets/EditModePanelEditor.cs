@@ -12,9 +12,15 @@ public class EditModePanelEditor : MonoBehaviour {
     private GameObject _scrollBar;
     private GameObject _grid;
     public GameObject objButtonPrefab;
+    public GameObject General_Manager;
+    private WallEditorManager wallManager;
+    private CameraManager camManager;
+
 
     // Use this for initialization
     void Start () {
+        wallManager = General_Manager.GetComponent<GeneralEditorManager>().wallEditor.GetComponent<WallEditorManager>();
+        camManager = General_Manager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>();
         this._dropdown = this.transform.Find("Dropdown").GetComponent<Dropdown>();
         this._addButton = this.transform.Find("AddButton").gameObject;
         this._removeButton = this.transform.Find("RemoveButton").gameObject;
@@ -34,9 +40,17 @@ public class EditModePanelEditor : MonoBehaviour {
             this._listPanel.SetActive(true);
             this._scrollBar.SetActive(true);
             GameObject WallEditButton = Instantiate(objButtonPrefab, _grid.transform);
+            Button wallBtn = WallEditButton.GetComponent<Button>();
+            wallBtn.onClick.AddListener(() => wallManager.toggleWallEditMode());
             GameObject FloorEditButton = Instantiate(objButtonPrefab, _grid.transform);
+            Button floorBtn = FloorEditButton.GetComponent<Button>();
+            floorBtn.onClick.AddListener(() => wallManager.WallOff());
             GameObject DoorEditButton = Instantiate(objButtonPrefab, _grid.transform);
+            Button doorBtn = DoorEditButton.GetComponent<Button>();
+            doorBtn.onClick.AddListener(() => wallManager.WallOff());
             GameObject WindowEditButton = Instantiate(objButtonPrefab, _grid.transform);
+            Button winBtn = WindowEditButton.GetComponent<Button>();
+            winBtn.onClick.AddListener(() => wallManager.WallOff());
             WallEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Walls";
             FloorEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Floor";
             DoorEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Doors";
@@ -45,6 +59,7 @@ public class EditModePanelEditor : MonoBehaviour {
         else if (dropdownVal == 1) //cameras
         {
             resetGridList();
+            camManager.camModeOn();
             this._addButton.SetActive(false);
             this._removeButton.SetActive(false);
             this._listPanel.SetActive(true);
@@ -77,6 +92,7 @@ public class EditModePanelEditor : MonoBehaviour {
         }
     }
 
+
     public int getDropdownVal()
     {
         return _dropdown.value;
@@ -84,6 +100,8 @@ public class EditModePanelEditor : MonoBehaviour {
 
     private void resetGridList()
     {
+        wallManager.WallOff();
+        camManager.camModeOff();
         foreach (Transform t in _grid.transform)
         {
             GameObject.Destroy(t.gameObject);

@@ -31,22 +31,32 @@ public class CameraManager : MonoBehaviour {
     {
         if (CamPlacementActive)
         {
-            foreach (var cam in CameraPlacements)
-            {
-                cam.gameObject.SetActive(false);
-            }
-            CamPlacementActive = false;
-            emptyCamPlacementList();
+            camModeOff();
         }
         else
         {
-            getCurrentCamPlacements();
-            foreach (var cam in CameraPlacements)
-            {
-                cam.gameObject.SetActive(true);
-            }
-            CamPlacementActive = true;
+            camModeOn();
         }
+    }
+
+    public void camModeOff()
+    {
+        foreach (var cam in CameraPlacements)
+        {
+            cam.gameObject.SetActive(false);
+        }
+        CamPlacementActive = false;
+        emptyCamPlacementList();
+    }
+
+    public void camModeOn()
+    {
+        getCurrentCamPlacements();
+        foreach (var cam in CameraPlacements)
+        {
+            cam.gameObject.SetActive(true);
+        }
+        CamPlacementActive = true;
     }
 
     public void emptyCamPlacementList()

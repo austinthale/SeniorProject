@@ -27,20 +27,30 @@ public class WallEditorManager : MonoBehaviour {
     {
         if (wallPlacementActive)
         {
-            foreach (var wall in WallPlacements)
-            {
-                wall.gameObject.SetActive(false);
-            }
-            wallPlacementActive = false;
+            WallOff();
         }
         else
         {
-            foreach (var wall in WallPlacements)
-            {
-                wall.gameObject.SetActive(true);
-            }
-            wallPlacementActive = true;
+            WallOn();
         }
+    }
+
+    public void WallOn()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.gameObject.SetActive(true);
+        }
+        wallPlacementActive = true;
+    }
+
+    public void WallOff()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.gameObject.SetActive(false);
+        }
+        wallPlacementActive = false;
     }
 
 
