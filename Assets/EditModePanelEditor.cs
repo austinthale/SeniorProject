@@ -50,6 +50,7 @@ public class EditModePanelEditor : MonoBehaviour {
             Button wallBtn = WallEditButton.GetComponent<Button>();
             wallBtn.onClick.AddListener(() => wallManager.DoorOff());
             wallBtn.onClick.AddListener(() => wallManager.WindowOff());
+            wallBtn.onClick.AddListener(() => wallManager.WallOn());
 
             GameObject FloorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button floorBtn = FloorEditButton.GetComponent<Button>();
@@ -59,11 +60,13 @@ public class EditModePanelEditor : MonoBehaviour {
             Button doorBtn = DoorEditButton.GetComponent<Button>();
             doorBtn.onClick.AddListener(() => wallManager.WindowOff());
             doorBtn.onClick.AddListener(() => wallManager.toggleDoorEditMode());
+            doorBtn.onClick.AddListener(() => wallManager.WallOn());
 
             GameObject WindowEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button winBtn = WindowEditButton.GetComponent<Button>();
             winBtn.onClick.AddListener(() => wallManager.DoorOff());
             winBtn.onClick.AddListener(() => wallManager.toggleWindowEditMode());
+            winBtn.onClick.AddListener(() => wallManager.WallOn());
 
 
             WallEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Walls";
