@@ -17,8 +17,8 @@ public class AssailantEditorManager : EditorManager {
         // add to list
         assailantList.Add(assailant);
         // similar to CameraPlacementEditor
-        if (editModePanel.getDropdownVal() == 2)
-            editModePanel.changePanelView(2);
+        if (editModePanel.getDropdownVal() == 3)
+            editModePanel.changePanelView(3);
     }
 
     public override void Delete(int ind)
@@ -39,8 +39,8 @@ public class AssailantEditorManager : EditorManager {
             }
             Destroy(temp);
 
-            if (editModePanel.getDropdownVal() == 2)
-                editModePanel.changePanelView(2);
+            if (editModePanel.getDropdownVal() == 3)
+                editModePanel.changePanelView(3);
         }
     }
 

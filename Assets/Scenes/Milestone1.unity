@@ -1265,6 +1265,11 @@ Prefab:
       propertyPath: Zone_Info_Plane
       value: 
       objectReference: {fileID: 1472995333}
+    - target: {fileID: 114104192830048746, guid: 8ea150caad89bb94d90a59c17b52fae6,
+        type: 2}
+      propertyPath: camZoomSpeed
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ea150caad89bb94d90a59c17b52fae6, type: 2}
   m_IsPrefabAsset: 0
