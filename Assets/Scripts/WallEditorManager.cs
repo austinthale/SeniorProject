@@ -9,8 +9,11 @@ public class WallEditorManager : MonoBehaviour {
 
     public bool wallPlacementActive = true;
 
-	// Use this for initialization
-	void Start () {
+    public bool doorMode = false;
+    public bool windowMode = false;
+
+    // Use this for initialization
+    void Start () {
         WallPlacements = GridManager.GetComponent<GenerateGrid>().WallPlacementList;
         Walls = GridManager.GetComponent<GenerateGrid>().walls;
     }
@@ -31,9 +34,84 @@ public class WallEditorManager : MonoBehaviour {
         }
         else
         {
+            if (doorMode)
+            {
+                DoorOff();
+            }
+            if (windowMode)
+            {
+                WindowOff();
+            }
             WallOn();
         }
     }
+
+    public void toggleDoorEditMode()
+    {
+        if (!doorMode)
+        {
+            DoorOn();
+        }
+        else
+        {
+            DoorOff();
+        }
+    }
+
+    public void DoorOn()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.GetComponent<WallPlacementEditor>().isDoorMode = true;
+
+        }
+        wallPlacementActive = true;
+        doorMode = true;
+    }
+
+    public void DoorOff()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.GetComponent<WallPlacementEditor>().isDoorMode = false;
+        }
+        wallPlacementActive = true;
+        doorMode = false;
+    }
+
+    public void toggleWindowEditMode()
+    {
+        if (!doorMode)
+        {
+            WindowOn();
+        }
+        else
+        {
+            WindowOff();
+        }
+    }
+
+    public void WindowOn()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.GetComponent<WallPlacementEditor>().isWindowMode = true;
+
+        }
+        wallPlacementActive = true;
+        windowMode = true;
+    }
+
+    public void WindowOff()
+    {
+        foreach (var wall in WallPlacements)
+        {
+            wall.GetComponent<WallPlacementEditor>().isWindowMode = false;
+        }
+        wallPlacementActive = true;
+        windowMode = false;
+    }
+
 
     public void WallOn()
     {
