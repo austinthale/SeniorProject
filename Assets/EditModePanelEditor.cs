@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,22 +16,27 @@ public class EditModePanelEditor : MonoBehaviour {
     public GameObject General_Manager;
     private WallEditorManager wallManager;
     private CameraManager camManager;
+    private GuardEditorManager guardManager;
 
 
     // Use this for initialization
     void Start () {
         wallManager = General_Manager.GetComponent<GeneralEditorManager>().wallEditor.GetComponent<WallEditorManager>();
         camManager = General_Manager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>();
+        guardManager = General_Manager.GetComponent<GeneralEditorManager>().guardManager.GetComponent<GuardEditorManager>();
         this._dropdown = this.transform.Find("Dropdown").GetComponent<Dropdown>();
         this._addButton = this.transform.Find("AddButton").gameObject;
+        _addButton.GetComponent<Button>().onClick.AddListener(AddButtonClicked);
         this._removeButton = this.transform.Find("RemoveButton").gameObject;
+        _removeButton.GetComponent<Button>().onClick.AddListener(RemoveButtonClicked);
         this._listPanel = this.transform.Find("ListPanel").gameObject;
         this._scrollBar = this.transform.Find("Scrollbar").gameObject;
         this._grid = _listPanel.transform.Find("Grid").gameObject;
         changePanelView(0);
     }
-	
-	public void changePanelView(int dropdownVal)
+
+
+    public void changePanelView(int dropdownVal)
     {
         if (dropdownVal == 0) //layout
         {
@@ -64,7 +70,7 @@ public class EditModePanelEditor : MonoBehaviour {
             this._removeButton.SetActive(false);
             this._listPanel.SetActive(true);
             this._scrollBar.SetActive(true);
-            generateCameraButtons();
+            generateButtons(dropdownVal);
         }
         else if (dropdownVal == 2) //guards
         {
@@ -73,6 +79,8 @@ public class EditModePanelEditor : MonoBehaviour {
             this._removeButton.SetActive(true);
             this._listPanel.SetActive(true);
             this._scrollBar.SetActive(true);
+
+            generateButtons(dropdownVal);
         }
         else if (dropdownVal == 3) //assailants
         {
@@ -108,15 +116,67 @@ public class EditModePanelEditor : MonoBehaviour {
         }
     }
 
-    public void generateCameraButtons()
+    public void generateButtons(int type)
     {
         GameObject temp;
         int count = 1;
-        foreach (Camera cam in GameObject/*.Find("EditorManager").transform*/.Find("CameraManager").transform.GetComponent<CameraManager>().cameraList)
+        if (type == 1) // CAMERA BUTTONS
         {
-            temp = Instantiate(objButtonPrefab, _grid.transform);
-            temp.transform.Find("Text").transform.GetComponent<Text>().text = "Camera " + count;
-            count++;
+            foreach (Camera cam in camManager.cameraList)
+            {
+                temp = Instantiate(objButtonPrefab, _grid.transform);
+                temp.transform.Find("Text").transform.GetComponent<Text>().text = "Camera " + count;
+                count++;
+            }
+        }
+        else if (type == 2) // GUARD BUTTONS
+        {
+            foreach (GameObject guard in guardManager.guardList)
+            {
+                temp = Instantiate(objButtonPrefab, _grid.transform);
+                temp.transform.Find("Text").transform.GetComponent<Text>().text = "Guard " + count;
+                count++;
+            }
         }
     }
+
+
+    public void AddButtonClicked()
+    {
+        int dropdownVal = getDropdownVal();
+        if (dropdownVal == 2)
+        {
+            // add guard
+            guardManager.Add();
+        }
+        else if (dropdownVal == 3)
+        {
+            // add assailant
+        }
+        else if (dropdownVal == 4)
+        {
+            // add others...
+        }
+    }
+
+
+    public void RemoveButtonClicked()
+    {
+        int dropdownVal = getDropdownVal();
+        if (dropdownVal == 2)
+        {
+            // add guard
+            guardManager.Delete(guardManager.getIdxSelectedGuard());
+        }
+        else if (dropdownVal == 3)
+        {
+            // add assailant
+        }
+        else if (dropdownVal == 4)
+        {
+            // add others...
+        }
+    }
+
+
 }
