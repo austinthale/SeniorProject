@@ -165,6 +165,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1960096097356416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4652749751780972}
+  - component: {fileID: 114248960420642156}
+  m_Layer: 0
+  m_Name: AssailantManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1966462557137970
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +290,19 @@ Transform:
   m_Father: {fileID: 4845025305903534}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4652749751780972
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960096097356416}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4849439028011462}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4845025305903534
 Transform:
   m_ObjectHideFlags: 1
@@ -304,6 +333,7 @@ Transform:
   - {fileID: 4845025305903534}
   - {fileID: 4945470536956784}
   - {fileID: 4216411611232734}
+  - {fileID: 4652749751780972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,10 +372,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481634676531164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5b19502f69e8e46b3d3b4729d80996, type: 3}
+  m_Script: {fileID: 11500000, guid: cbc1bf45ecbeadb4a98dbecccf8222a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guardList: {fileID: 0}
+  guardList: []
+  guardPrefab: {fileID: 1397041386312300, guid: 590f580bb0631a748bf9fc45cf643a7e,
+    type: 2}
+  GeneralEditorManager: {fileID: 1367128735520964}
 --- !u!114 &114117467453931678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +396,21 @@ MonoBehaviour:
   wallPlacementActive: 1
   doorMode: 0
   windowMode: 0
+--- !u!114 &114248960420642156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960096097356416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8cd70b3a886e743b8ccea90bda291a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assailantList: []
+  assailantPrefab: {fileID: 1730134693216356, guid: 55b3788aa7bc0e2488f52f8827313818,
+    type: 2}
+  GeneralEditorManager: {fileID: 1367128735520964}
 --- !u!114 &114336547672256112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,6 +426,8 @@ MonoBehaviour:
   wallEditor: {fileID: 1940002613142672}
   cameraManager: {fileID: 1966462557137970}
   canvas: {fileID: 0}
+  guardManager: {fileID: 1481634676531164}
+  assailantManager: {fileID: 1960096097356416}
 --- !u!114 &114872961056739716
 MonoBehaviour:
   m_ObjectHideFlags: 1

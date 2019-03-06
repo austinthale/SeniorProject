@@ -8,6 +8,7 @@ public class GeneralEditorManager : MonoBehaviour {
     public GameObject cameraManager;
     public GameObject canvas;
     public GameObject guardManager;
+    public GameObject assailantManager;
 
     //put different modes of "edit mode" from UserInput in here.....
     //example: wall edit mode, assailant edit mode, ect...
