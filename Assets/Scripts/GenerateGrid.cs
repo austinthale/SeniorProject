@@ -22,6 +22,9 @@ public class GenerateGrid : MonoBehaviour
     public GameObject WallParent;
     public GameObject zoneList;
 
+    public GameObject doorHolder;
+    public GameObject windowParent;
+
     public GameObject GeneralEditorManager;
 
     //public GameObject[,] argo = new GameObject[gridHeight, gridWidth];
@@ -126,6 +129,10 @@ public class GenerateGrid : MonoBehaviour
                     walls.Add(w);
                     assignGeneralManager(w);
                     w.transform.parent = WallParent.transform;
+                    GameObject d = temp.GetComponent<WallPlacementEditor>().door;
+                    d.transform.parent = doorHolder.transform;
+                    GameObject win = temp.GetComponent<WallPlacementEditor>().window;
+                    win.transform.parent = windowParent.transform;
                     //temp.GetComponent<WallPlacementEditor>().wall = Instantiate(wallZ, new Vector3(x, y, z), Quaternion.identity);
                     WallPlacementList.Add(temp);
                 }
@@ -143,7 +150,13 @@ public class GenerateGrid : MonoBehaviour
                     GameObject w = temp.GetComponent<WallPlacementEditor>().wall;
                     walls.Add(w);
                     w.transform.parent = WallParent.transform;
+
                     assignGeneralManager(w);
+
+                    GameObject d = temp.GetComponent<WallPlacementEditor>().door;
+                    d.transform.parent = doorHolder.transform;
+                    GameObject win = temp.GetComponent<WallPlacementEditor>().window;
+                    win.transform.parent = windowParent.transform;
                     //GameObject w = Instantiate(wallX, new Vector3(x, y, z), Quaternion.identity);
                     //temp.GetComponent<WallPlacementEditor>().wall = w;
                     WallPlacementList.Add(temp);

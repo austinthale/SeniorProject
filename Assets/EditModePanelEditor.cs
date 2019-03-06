@@ -45,18 +45,27 @@ public class EditModePanelEditor : MonoBehaviour {
             this._removeButton.SetActive(false);
             this._listPanel.SetActive(true);
             this._scrollBar.SetActive(true);
+
             GameObject WallEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button wallBtn = WallEditButton.GetComponent<Button>();
-            wallBtn.onClick.AddListener(() => wallManager.toggleWallEditMode());
+            wallBtn.onClick.AddListener(() => wallManager.DoorOff());
+            wallBtn.onClick.AddListener(() => wallManager.WindowOff());
+
             GameObject FloorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button floorBtn = FloorEditButton.GetComponent<Button>();
             floorBtn.onClick.AddListener(() => wallManager.WallOff());
+
             GameObject DoorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button doorBtn = DoorEditButton.GetComponent<Button>();
-            doorBtn.onClick.AddListener(() => wallManager.WallOff());
+            doorBtn.onClick.AddListener(() => wallManager.WindowOff());
+            doorBtn.onClick.AddListener(() => wallManager.toggleDoorEditMode());
+
             GameObject WindowEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button winBtn = WindowEditButton.GetComponent<Button>();
-            winBtn.onClick.AddListener(() => wallManager.WallOff());
+            winBtn.onClick.AddListener(() => wallManager.DoorOff());
+            winBtn.onClick.AddListener(() => wallManager.toggleWindowEditMode());
+
+
             WallEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Walls";
             FloorEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Floor";
             DoorEditButton.transform.Find("Text").transform.GetComponent<Text>().text = "Edit Doors";
