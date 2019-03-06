@@ -445,6 +445,22 @@ Prefab:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 50345416}
+    - target: {fileID: 114045469331093966, guid: 2b2f470b7abb2d4468de74f63f860616,
+        type: 2}
+      propertyPath: GeneralEditorManager
+      value: 
+      objectReference: {fileID: 2131303369}
+    - target: {fileID: 114045469331093966, guid: 2b2f470b7abb2d4468de74f63f860616,
+        type: 2}
+      propertyPath: guardPrefab
+      value: 
+      objectReference: {fileID: 1397041386312300, guid: 590f580bb0631a748bf9fc45cf643a7e,
+        type: 2}
+    - target: {fileID: 114336547672256112, guid: 2b2f470b7abb2d4468de74f63f860616,
+        type: 2}
+      propertyPath: guardManager
+      value: 
+      objectReference: {fileID: 1547307250}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2f470b7abb2d4468de74f63f860616, type: 2}
   m_IsPrefabAsset: 0
@@ -726,6 +742,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f70251e2400cf84fa67d19f523d8fdd, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1547307250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1481634676531164, guid: 2b2f470b7abb2d4468de74f63f860616,
+    type: 2}
+  m_PrefabInternal: {fileID: 763680812}
 --- !u!1 &1815470952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1878672118844320, guid: b5d1165ed98d2a54c9c15c9ce9b14720,
