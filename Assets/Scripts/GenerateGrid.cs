@@ -17,10 +17,12 @@ public class GenerateGrid : MonoBehaviour
     public GameObject wallZ;
     public GameObject wallPlacementX;
     public GameObject wallPlacementZ;
+    private GameObject floorTemp;
 
     public GameObject WallPlacementParentObject;
     public GameObject WallParent;
     public GameObject zoneList;
+    public GameObject floorParent;
 
     public GameObject doorHolder;
     public GameObject windowParent;
@@ -37,6 +39,23 @@ public class GenerateGrid : MonoBehaviour
     {
         genZones();
         //genWallPlacement();
+    }
+
+    public void clearAll()
+    {
+        Object.Destroy(floorTemp);
+        foreach (var zone in gridList)
+        {
+            Object.Destroy(zone);
+        }
+        foreach (var trigger in triggers)
+        {
+            Object.Destroy(trigger);
+        }
+        gridList.Clear();
+        WallPlacementList.Clear();
+        walls.Clear();
+        triggers.Clear();
     }
 
     private void gridReset()
@@ -183,8 +202,10 @@ public class GenerateGrid : MonoBehaviour
     public void floorGen()
     {
         GameObject floor = Instantiate(floorCube, new Vector3(-(zonePrefab.transform.localScale.x / 2), -0.5f, -(zonePrefab.transform.localScale.z / 2)), Quaternion.identity);
+        floorTemp = floor;
         floor.transform.localScale += new Vector3((zonePrefab.transform.localScale.x * gridWidth), 0, (zonePrefab.transform.localScale.z * gridWidth));
-
+        floor.transform.parent = floorParent.transform;
+        floorParent.GetComponent<FloorEditorManager>().floor = floor;
     }
 
     public void turnWallsOff()

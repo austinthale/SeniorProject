@@ -26,6 +26,17 @@ public class WallEditorManager : MonoBehaviour {
         }
     }
 
+
+    public void clearAll()
+    {
+        foreach(var wp in WallPlacements)
+        {
+            wp.GetComponent<WallPlacementEditor>().clearAll();
+            Object.Destroy(wp);
+        }
+        WallPlacements.Clear();
+    }
+
     public void toggleWallEditMode()
     {
         if (wallPlacementActive)

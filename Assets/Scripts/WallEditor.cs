@@ -7,6 +7,14 @@ public class WallEditor : MonoBehaviour {
     public GameObject placementObject;
     public List<GameObject> CameraPlacements;
 
+    public void clearAll()
+    {
+        foreach (var cam in CameraPlacements)
+        {
+            Object.Destroy(cam);
+        }
+    }
+
 	// Use this for initialization
 	void Start () {
 		

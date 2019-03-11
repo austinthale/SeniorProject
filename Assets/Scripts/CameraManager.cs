@@ -12,7 +12,6 @@ public class CameraManager : MonoBehaviour {
     public bool CamPlacementActive = false;
     int index;
 
-
     // Use this for initialization
     void Start () {
         //foreach()
@@ -25,6 +24,16 @@ public class CameraManager : MonoBehaviour {
         {
             toggleCamEditMode();
         }
+    }
+
+    public void clearAll()
+    {
+        foreach (Transform cam in CameraParent.transform)
+        {
+            Object.Destroy(cam.gameObject);
+        }
+        cameraList.Clear();
+        CameraPlacements.Clear();
     }
 
     public void toggleCamEditMode()

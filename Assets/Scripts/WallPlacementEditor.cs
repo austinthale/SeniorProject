@@ -18,6 +18,14 @@ public class WallPlacementEditor : MonoBehaviour
     public bool WindowOn = false;
     public bool isWindowMode = false;
 
+    public void clearAll()
+    {
+        wall.GetComponent<WallEditor>().clearAll();
+        Object.Destroy(wall);
+        Object.Destroy(door);
+        Object.Destroy(window);
+    }
+
     private void OnMouseDown()
     {
         if (isDoorMode)

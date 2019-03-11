@@ -44,6 +44,7 @@ public class CameraPlacementEditor : MonoBehaviour {
     {
         camera.gameObject.transform.parent = this.transform;
         CameraEditor.GetComponent<CameraManager>().cameraList.Remove(actaulCamera.GetComponent<Camera>());
+        CameraEditor.GetComponent<CameraManager>().CameraPlacements.Remove(this.gameObject);
         if (editModePanel.getDropdownVal() == 1)
             editModePanel.changePanelView(1);
         camera.gameObject.SetActive(false);
@@ -53,6 +54,7 @@ public class CameraPlacementEditor : MonoBehaviour {
     {
         camera.gameObject.SetActive(true);
         CameraEditor.GetComponent<CameraManager>().cameraList.Add(actaulCamera.GetComponent<Camera>());
+        CameraEditor.GetComponent<CameraManager>().CameraPlacements.Add(this.gameObject);
         camera.gameObject.transform.parent = cameraParent.transform;
         if (editModePanel.getDropdownVal() == 1)
             editModePanel.changePanelView(1);

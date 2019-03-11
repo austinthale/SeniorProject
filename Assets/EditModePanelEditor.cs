@@ -17,6 +17,7 @@ public class EditModePanelEditor : MonoBehaviour {
     private WallEditorManager wallManager;
     private CameraManager camManager;
     private GuardEditorManager guardManager;
+    private FloorEditorManager floorManager;
 
 
     // Use this for initialization
@@ -24,6 +25,7 @@ public class EditModePanelEditor : MonoBehaviour {
         wallManager = General_Manager.GetComponent<GeneralEditorManager>().wallEditor.GetComponent<WallEditorManager>();
         camManager = General_Manager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>();
         guardManager = General_Manager.GetComponent<GeneralEditorManager>().guardManager.GetComponent<GuardEditorManager>();
+        floorManager = General_Manager.GetComponent<GeneralEditorManager>().floorManager.GetComponent<FloorEditorManager>();
         this._dropdown = this.transform.Find("Dropdown").GetComponent<Dropdown>();
         this._addButton = this.transform.Find("AddButton").gameObject;
         _addButton.GetComponent<Button>().onClick.AddListener(AddButtonClicked);
@@ -55,6 +57,7 @@ public class EditModePanelEditor : MonoBehaviour {
             GameObject FloorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button floorBtn = FloorEditButton.GetComponent<Button>();
             floorBtn.onClick.AddListener(() => wallManager.WallOff());
+            floorBtn.onClick.AddListener(() => floorManager.clearAll()); //delete everything----warning
 
             GameObject DoorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button doorBtn = DoorEditButton.GetComponent<Button>();
