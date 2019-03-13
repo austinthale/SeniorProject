@@ -18,6 +18,7 @@ public class EditModePanelEditor : MonoBehaviour {
     private CameraManager camManager;
     private GuardEditorManager guardManager;
     private FloorEditorManager floorManager;
+    private AssailantEditorManager assailantManager;
 
 
     // Use this for initialization
@@ -26,6 +27,7 @@ public class EditModePanelEditor : MonoBehaviour {
         camManager = General_Manager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>();
         guardManager = General_Manager.GetComponent<GeneralEditorManager>().guardManager.GetComponent<GuardEditorManager>();
         floorManager = General_Manager.GetComponent<GeneralEditorManager>().floorManager.GetComponent<FloorEditorManager>();
+        assailantManager = General_Manager.GetComponent<GeneralEditorManager>().assailantManager.GetComponent<AssailantEditorManager>();
         this._dropdown = this.transform.Find("Dropdown").GetComponent<Dropdown>();
         this._addButton = this.transform.Find("AddButton").gameObject;
         _addButton.GetComponent<Button>().onClick.AddListener(AddButtonClicked);
@@ -104,6 +106,7 @@ public class EditModePanelEditor : MonoBehaviour {
             this._removeButton.SetActive(true);
             this._listPanel.SetActive(true);
             this._scrollBar.SetActive(true);
+            generateButtons(dropdownVal);
         }
         else if (dropdownVal == 4) //props
         {
@@ -153,6 +156,15 @@ public class EditModePanelEditor : MonoBehaviour {
                 count++;
             }
         }
+        else if (type == 3) // ASSAILANT BUTTONS
+        {
+            foreach (GameObject ass in assailantManager.assailantList)
+            {
+                temp = Instantiate(objButtonPrefab, _grid.transform);
+                temp.transform.Find("Text").transform.GetComponent<Text>().text = "Assailant " + count;
+                count++;
+            }
+        }
     }
 
 
@@ -166,6 +178,7 @@ public class EditModePanelEditor : MonoBehaviour {
         }
         else if (dropdownVal == 3)
         {
+            assailantManager.Add();
             // add assailant
         }
         else if (dropdownVal == 4)
@@ -180,16 +193,17 @@ public class EditModePanelEditor : MonoBehaviour {
         int dropdownVal = getDropdownVal();
         if (dropdownVal == 2)
         {
-            // add guard
+            // remove guard
             guardManager.Delete(guardManager.getIdxSelectedGuard());
         }
         else if (dropdownVal == 3)
         {
-            // add assailant
+            // remove assailant
+            assailantManager.Delete(assailantManager.getIdxSelectedAssailant());
         }
         else if (dropdownVal == 4)
         {
-            // add others...
+            // remove others...
         }
     }
 

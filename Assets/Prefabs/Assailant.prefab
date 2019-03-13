@@ -993,6 +993,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   agent: {fileID: 195772270103994200}
   character: {fileID: 114710038725314292}
+  IsSimMode: 0
 --- !u!114 &114429425196510276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1131,6 +1132,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

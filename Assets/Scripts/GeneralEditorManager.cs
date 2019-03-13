@@ -8,6 +8,7 @@ public class GeneralEditorManager : MonoBehaviour {
     public GameObject cameraManager;
     public GameObject canvas;
     public GameObject guardManager;
+    public GameObject assailantManager;
 
     public GameObject floorManager;
     //put different modes of "edit mode" from UserInput in here.....
