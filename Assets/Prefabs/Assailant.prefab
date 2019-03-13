@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 95136169218460996}
   - component: {fileID: 136327122047686650}
   - component: {fileID: 114710038725314292}
+  - component: {fileID: 114490157366614550}
   m_Layer: 0
   m_Name: Assailant
   m_TagString: Untagged
@@ -1007,6 +1008,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
   follow: 0
+--- !u!114 &114490157366614550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730134693216356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10048b71b835ab04790cb96c90d6abf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragSpeed: 2
 --- !u!114 &114710038725314292
 MonoBehaviour:
   m_ObjectHideFlags: 1
