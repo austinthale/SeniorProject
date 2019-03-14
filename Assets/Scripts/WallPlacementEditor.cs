@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WallPlacementEditor : MonoBehaviour
 {
@@ -28,17 +29,20 @@ public class WallPlacementEditor : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isDoorMode)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            toggleDoor();
-        }
-        else if(isWindowMode)
-        {
-            toggleWindow();
-        }
-        else
-        {
-            toggleWall();
+            if (isDoorMode)
+            {
+                toggleDoor();
+            }
+            else if (isWindowMode)
+            {
+                toggleWindow();
+            }
+            else
+            {
+                toggleWall();
+            }
         }
         
     }
