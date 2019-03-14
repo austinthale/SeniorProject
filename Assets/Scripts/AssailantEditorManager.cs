@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AssailantEditorManager : EditorManager {
 
@@ -9,6 +10,9 @@ public class AssailantEditorManager : EditorManager {
     public GameObject GeneralEditorManager;
     EditModePanelEditor editModePanel;
     int _idxSelectedAssailant;
+    private GenerateGrid gridmanager;
+
+    public GameObject navMeshManager;
 
     public override void Add()
     {
@@ -53,6 +57,7 @@ public class AssailantEditorManager : EditorManager {
     void Start()
     {
         editModePanel = GeneralEditorManager.GetComponent<GeneralEditorManager>().canvas.transform.Find("Edit Mode Panel").transform.GetComponent<EditModePanelEditor>();
+        gridmanager = GeneralEditorManager.GetComponent<GeneralEditorManager>().gridManager.GetComponent<GenerateGrid>();
         _idxSelectedAssailant = -1;
     }
 
@@ -64,5 +69,14 @@ public class AssailantEditorManager : EditorManager {
     public int getIdxSelectedAssailant()
     {
         return _idxSelectedAssailant;
+    }
+
+    public void bakeNavMesh()
+    {
+
+        foreach (var z in gridmanager.gridList)
+        {
+            //NavMeshBuilder.BuildNavMeshData(z);
+        }
     }
 }

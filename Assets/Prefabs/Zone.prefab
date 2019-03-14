@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 65856003711359662}
   - component: {fileID: 114999318243087758}
   - component: {fileID: 114224289421422320}
+  - component: {fileID: 114492460345510400}
   m_Layer: 9
   m_Name: Zone
   m_TagString: Untagged
@@ -159,6 +160,17 @@ MonoBehaviour:
   windows: 0
   doors: 0
   trigger: {fileID: 1088751013876172}
+--- !u!114 &114492460345510400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147175507164230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0754ba4801c75b34088492d596d70cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114674845506525098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,3 +206,4 @@ MonoBehaviour:
   rend: {fileID: 23809241563742688}
   select_zone: {fileID: 0}
   trigger: {fileID: 0}
+  selectable: 0
