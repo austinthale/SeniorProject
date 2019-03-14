@@ -59,7 +59,8 @@ public class EditModePanelEditor : MonoBehaviour {
             GameObject FloorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button floorBtn = FloorEditButton.GetComponent<Button>();
             floorBtn.onClick.AddListener(() => wallManager.WallOff());
-            floorBtn.onClick.AddListener(() => floorManager.clearAll()); //delete everything----warning
+            floorBtn.onClick.AddListener(() => floorManager.displayEditFloor());
+            //floorBtn.onClick.AddListener(() => floorManager.clearAll()); //delete everything----warning
 
             GameObject DoorEditButton = Instantiate(objButtonPrefab, _grid.transform);
             Button doorBtn = DoorEditButton.GetComponent<Button>();
@@ -128,6 +129,7 @@ public class EditModePanelEditor : MonoBehaviour {
     {
         wallManager.WallOff();
         camManager.camModeOff();
+        floorManager.undisplayEditFloor();
         foreach (Transform t in _grid.transform)
         {
             GameObject.Destroy(t.gameObject);
