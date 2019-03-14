@@ -19,6 +19,8 @@ public class UserInput : MonoBehaviour {
     public GameObject GeneralEditorManager;
     private GameObject wallmManager;
 
+    public bool isSimMode = false;
+
     //private
     private Vector3 camDragOrigin;
     private bool isPanning;
@@ -110,6 +112,8 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(true);
             //player_controller.stopMoving();
+            isSimMode = true;
+            StartCoroutine(simMode());
             if (assailant != null)
             {
                 player_controller.IsSimMode = true;
@@ -136,6 +140,15 @@ public class UserInput : MonoBehaviour {
         }
     }
 
+    IEnumerator simMode()
+    {
+        while (isSimMode)
+        {
+            yield return new WaitForFixedUpdate();
+
+        }
+    }
+
     public void ViewReset(bool allowMove)
     {
         if (selectZoneScript.currentZone != null)
@@ -143,7 +156,7 @@ public class UserInput : MonoBehaviour {
         List<GameObject> zoneList = gridmanager.GetComponent<GenerateGrid>().gridList;
 
         gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(false);
-        
+        isSimMode = false;
         gridmanager.GetComponent<GenerateGrid>().zoneList.gameObject.SetActive(false);
         secCamCanvas.SetActive(false);
         editCanvas.SetActive(false);

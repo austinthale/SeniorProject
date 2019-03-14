@@ -451,11 +451,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 0}
+  floorPanel: {fileID: 0}
   General: {fileID: 1193407751579630}
   wallManager: {fileID: 0}
   gridManager: {fileID: 0}
   camManager: {fileID: 0}
   guardManager: {fileID: 0}
+  sliderSize: {fileID: 0}
+  floorSize: 0
 --- !u!114 &114306583284038676
 MonoBehaviour:
   m_ObjectHideFlags: 1
