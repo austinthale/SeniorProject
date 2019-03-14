@@ -1145,7 +1145,7 @@ MonoBehaviour:
   assailantPrefab: {fileID: 1730134693216356, guid: 55b3788aa7bc0e2488f52f8827313818,
     type: 2}
   GeneralEditorManager: {fileID: 1105565011}
-  navMeshManager: {fileID: 0}
+  navMeshManager: {fileID: 462239098}
 --- !u!4 &2087798169
 Transform:
   m_ObjectHideFlags: 0
