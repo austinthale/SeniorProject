@@ -18,8 +18,8 @@ public class FloorEditorManager : MonoBehaviour
 
     private void Start()
     {
-        /*floorPanel = General.GetComponent<GeneralEditorManager>().canvas.transform.Find("Floor Edit Panel").gameObject;
-        slider = floorPanel.transform.Find("Slider").GetComponent<Slider>();*/
+        floorPanel = General.GetComponent<GeneralEditorManager>().canvas.transform.Find("Floor Edit Panel").gameObject;
+        slider = floorPanel.transform.Find("Slider").GetComponent<Slider>();
         wallManager = General.GetComponent<GeneralEditorManager>().wallEditor.GetComponent<WallEditorManager>();
         gridManager = General.GetComponent<GeneralEditorManager>().gridManager.GetComponent<GenerateGrid>();
         camManager = General.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>();
