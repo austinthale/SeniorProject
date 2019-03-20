@@ -174,6 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4677799999145284}
+  - component: {fileID: 114998589105317110}
   m_Layer: 0
   m_Name: Navmesh Manager
   m_TagString: Untagged
@@ -458,7 +459,7 @@ MonoBehaviour:
   camManager: {fileID: 0}
   guardManager: {fileID: 0}
   sliderSize: {fileID: 0}
-  floorSize: 0
+  floorSize: 2
 --- !u!114 &114306583284038676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -528,9 +529,9 @@ MonoBehaviour:
   floorCube: {fileID: 1568113817255858, guid: e043408e6d3988e48837d909489e2615, type: 2}
   wallX: {fileID: 1514423565023654, guid: 9b9dafdd87a4e2f4ab269e615a7a0763, type: 2}
   wallZ: {fileID: 1717416098152986, guid: ed8f37b53e62a7f42b36874afe177dae, type: 2}
-  wallPlacementX: {fileID: 1602121643689182, guid: eea5334ce260b3f46a988e3a10ef1c8d,
+  wallPlacementX: {fileID: 1383787670354130, guid: c5090dd010cf65d4889029d05b3f6a14,
     type: 2}
-  wallPlacementZ: {fileID: 1779225967333926, guid: fcd8959937e85194ea11ffaaefac414e,
+  wallPlacementZ: {fileID: 1227351466560508, guid: c903c80f22e3d9641bab2404ef18adf7,
     type: 2}
   WallPlacementParentObject: {fileID: 1676863005317896}
   WallParent: {fileID: 1121774489983244}
@@ -560,3 +561,16 @@ MonoBehaviour:
   wallPlacementActive: 1
   doorMode: 0
   windowMode: 0
+--- !u!114 &114998589105317110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865909413528286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c551d7c4864767c44a7f2d11b21b78cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Tracked: {fileID: 0}
+  m_Size: {x: 800, y: 200, z: 800}
