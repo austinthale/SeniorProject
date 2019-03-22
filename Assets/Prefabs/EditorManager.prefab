@@ -529,9 +529,9 @@ MonoBehaviour:
   floorCube: {fileID: 1568113817255858, guid: e043408e6d3988e48837d909489e2615, type: 2}
   wallX: {fileID: 1514423565023654, guid: 9b9dafdd87a4e2f4ab269e615a7a0763, type: 2}
   wallZ: {fileID: 1717416098152986, guid: ed8f37b53e62a7f42b36874afe177dae, type: 2}
-  wallPlacementX: {fileID: 1383787670354130, guid: c5090dd010cf65d4889029d05b3f6a14,
+  wallPlacementX: {fileID: 1602121643689182, guid: eea5334ce260b3f46a988e3a10ef1c8d,
     type: 2}
-  wallPlacementZ: {fileID: 1227351466560508, guid: c903c80f22e3d9641bab2404ef18adf7,
+  wallPlacementZ: {fileID: 1779225967333926, guid: fcd8959937e85194ea11ffaaefac414e,
     type: 2}
   WallPlacementParentObject: {fileID: 1676863005317896}
   WallParent: {fileID: 1121774489983244}
