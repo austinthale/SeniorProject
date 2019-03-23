@@ -12,7 +12,7 @@ public class ReportManagerUI : Editor {
         ReportManager myReportManager = (ReportManager)target;
         if (GUILayout.Button ("Generate Report"))
         {
-            myReportManager.SaveReport();
+            //myReportManager.SaveReport();
         }
     }
 

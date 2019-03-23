@@ -23,6 +23,7 @@ public class GenerateGrid : MonoBehaviour
     public GameObject WallParent;
     public GameObject zoneList;
     public GameObject floorParent;
+    public GameObject triggerParent;
 
     public GameObject doorHolder;
     public GameObject windowParent;
@@ -113,7 +114,7 @@ public class GenerateGrid : MonoBehaviour
         {
             gridList[k].name = "Zone " + (k + 1);
             gridList[k].GetComponent<ZoneAnalysis>().ZoneName = "Zone " + (k + 1);
-            //gridList[k].GetComponent<ZoneAnalysis>().trigger.transform.parent = null;
+            gridList[k].GetComponent<ZoneAnalysis>().trigger.transform.parent = triggerParent.transform;
         }
         genWallPlacement();
         floorGen();

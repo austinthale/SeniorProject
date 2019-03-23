@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33861561574115764}
   - component: {fileID: 23183058251084254}
   - component: {fileID: 65587832495137874}
+  - component: {fileID: 114551016059979814}
   m_Layer: 0
   m_Name: FloorCube
   m_TagString: Untagged
@@ -96,3 +97,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114551016059979814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568113817255858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0754ba4801c75b34088492d596d70cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

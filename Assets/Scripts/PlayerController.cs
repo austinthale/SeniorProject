@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class PlayerController : MonoBehaviour
 {
 
-    public Camera cam;
+    //public Camera cam = Camera.main;
 
     public NavMeshAgent agent;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit))

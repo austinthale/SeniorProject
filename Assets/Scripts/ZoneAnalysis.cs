@@ -24,15 +24,21 @@ public class ZoneAnalysis : MonoBehaviour {
 		
 	}
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("herex");
+        if (collision.gameObject.GetComponent<zoneTag>())
+        {
+            print(collision.gameObject.GetComponent<zoneTag>().Type);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 10)
+        print("here");
+        if (other.GetComponent<zoneTag>())
         {
-            times_assialant_passed_through++;
-        }
-        if (other.gameObject.layer == 11 || other.gameObject.layer == 12)
-        {
-            number_guards++;
+            print(other.GetComponent<zoneTag>().Type);
         }
     }
 
