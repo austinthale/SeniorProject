@@ -8,7 +8,26 @@ using UnityEngine.UI;
 
 public class ReportManager : MonoBehaviour {
 
-    public GameObject GridManage;
+    public GameObject GeneralManager;
+
+    private GeneralEditorManager General;
+    private GenerateGrid GridManager;
+
+    private List<GameObject> zoneList;
+
+
+    public void Start()
+    {
+        General = GeneralManager.GetComponent<GeneralEditorManager>();
+        GridManager = General.gridManager.GetComponent<GenerateGrid>();
+        zoneList = GridManager.gridList;
+    }
+
+
+
+
+
+    /*public GameObject GridManage;
     public string ReportName = "report.txt";
     public report rep = new report();
     public GameObject Report_Panel;
@@ -16,9 +35,9 @@ public class ReportManager : MonoBehaviour {
     public Text Report_Panel_Text2;
     public Text Report_Panel_Text3;
     public Text Report_Panel_Text4;
-    public bool onOff = true;
+    public bool onOff = true;*/
 
-    public report createReport(List<GameObject> zones)
+    /*public report createReport(List<GameObject> zones)
     {
         
         for (int i = 0; i < zones.Count; i++)
@@ -34,14 +53,14 @@ public class ReportManager : MonoBehaviour {
         }
 
         return rep;
-    }
+    }*/
 
-    public void OnEnable()
+    /*public void OnEnable()
     {
         onOff = true;
-    }
+    }*/
 
-    private void Update()
+    /*private void Update()
     {
 
     }
@@ -60,9 +79,9 @@ public class ReportManager : MonoBehaviour {
         readableReport();
 
         Debug.Log("Report Genereated");
-    }
+    }*/
 
-    public void readableReport()
+    /*public void readableReport()
     {
         float amount = rep.zoneNames.Count / 4;
         string temp = "Security Report: " + "\n\n";
@@ -100,10 +119,10 @@ public class ReportManager : MonoBehaviour {
         System.IO.File.WriteAllText(Application.dataPath + "/" + "read-able-report.txt", temp);
         Report_Panel.SetActive(true);
         //Report_Panel_Text.text = temp;
-    }
+    }*/
 
 
-    public void toggleOnOff()
+    /*public void toggleOnOff()
     {
         if (onOff)
         {
@@ -114,7 +133,7 @@ public class ReportManager : MonoBehaviour {
         {
             Report_Panel.SetActive(true);
         }
-    }
+    }*/
 
 
 }

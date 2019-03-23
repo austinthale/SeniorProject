@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 136327122047686650}
   - component: {fileID: 114710038725314292}
   - component: {fileID: 114490157366614550}
+  - component: {fileID: 114614324735392156}
   m_Layer: 0
   m_Name: Assailant
   m_TagString: Untagged
@@ -958,7 +959,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -991,7 +992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2f3b088e091ed409a68733ab8ef467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 195772270103994200}
   character: {fileID: 114710038725314292}
   IsSimMode: 0
@@ -1020,6 +1020,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 2
+--- !u!114 &114614324735392156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730134693216356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb382317da292314fbe0ed89b31c399d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
 --- !u!114 &114710038725314292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1049,7 +1061,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.5
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.24, z: 0}
 --- !u!137 &137259499193771544

@@ -18,6 +18,8 @@ public class UserInput : MonoBehaviour {
     private List<GameObject> wallList;
     public GameObject GeneralEditorManager;
     private GameObject wallmManager;
+    private AssailantEditorManager assailantManager;
+    private List<GameObject> assailantList;
 
     public bool isSimMode = false;
 
@@ -32,11 +34,11 @@ public class UserInput : MonoBehaviour {
     void Start () {
         wallmManager = GeneralEditorManager.GetComponent<GeneralEditorManager>().wallEditor;
         gridmanager = GeneralEditorManager.GetComponent<GeneralEditorManager>().gridManager;
-        if (assailant != null)
-        {
+        assailantManager = GeneralEditorManager.GetComponent<GeneralEditorManager>().assailantManager.GetComponent<AssailantEditorManager>();
+        assailantList = assailantManager.assailantList;
+        /*
             player_controller = assailant.GetComponent<PlayerController>();
-            assailant_speed = assailant.GetComponent<NavMeshAgent>().speed;
-        }
+            assailant_speed = assailant.GetComponent<NavMeshAgent>().speed;*/
         selectZoneScript = this.gameObject.GetComponent<SelectZone>();
     }
 	
@@ -101,11 +103,12 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(true);
             secCamCanvas.SetActive(true);
-            player_controller.IsSimMode = true;
-            if (assailant != null)
+            //player_controller.IsSimMode = true;
+            foreach (var assail in assailantList)
             {
-                assailant.GetComponent<NavMeshAgent>().isStopped = false;
-                assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
+                assail.GetComponent<PlayerController>().IsSimMode = true;
+                assail.GetComponent<NavMeshAgent>().isStopped = false;
+                assail.GetComponent<NavMeshAgent>().speed = assailant_speed;
             }
         }
         else if (option == 3) //Sim Mode, no zones
@@ -114,11 +117,11 @@ public class UserInput : MonoBehaviour {
             //player_controller.stopMoving();
             isSimMode = true;
             StartCoroutine(simMode());
-            if (assailant != null)
+            foreach (var assail in assailantList)
             {
-                player_controller.IsSimMode = true;
-                assailant.GetComponent<NavMeshAgent>().isStopped = false;
-                assailant.GetComponent<NavMeshAgent>().speed = assailant_speed;
+                turnOnAssailants();
+                assail.GetComponent<NavMeshAgent>().isStopped = false;
+                assail.GetComponent<NavMeshAgent>().speed = assailant_speed;
             }
         }
         else if (option == 4) //Edit Mode
@@ -137,6 +140,22 @@ public class UserInput : MonoBehaviour {
             {
                 z.GetComponent<ToggleSelection>().selectable = false;
             }
+        }
+    }
+
+    void turnOnAssailants()
+    {
+        foreach (var assail in assailantList)
+        {
+            assail.GetComponent<PlayerController>().IsSimMode = true;
+        }
+    }
+
+    void turnOffAssailants()
+    {
+        foreach (var assail in assailantList)
+        {
+            assail.GetComponent<PlayerController>().IsSimMode = false;
         }
     }
 
@@ -161,10 +180,14 @@ public class UserInput : MonoBehaviour {
         secCamCanvas.SetActive(false);
         editCanvas.SetActive(false);
         zoneCanvas.SetActive(false);
-        if (!allowMove && assailant != null) {
-            player_controller.IsSimMode = false;
-            assailant.GetComponent<NavMeshAgent>().speed = 0;
-            assailant.GetComponent<NavMeshAgent>().isStopped = true;
+        if (!allowMove && assailantList.Count > 0) {
+            //player_controller.IsSimMode = false;
+            turnOffAssailants();
+            foreach (var assail in assailantList)
+            {
+                assail.GetComponent<NavMeshAgent>().speed = 0;
+                assail.GetComponent<NavMeshAgent>().isStopped = true;
+            }
         }
         
     }
