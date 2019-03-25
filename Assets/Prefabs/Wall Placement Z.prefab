@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1453003643142946
 GameObject:
   m_ObjectHideFlags: 1
@@ -3781,12 +3781,12 @@ MonoBehaviour:
   directionX: 0
   directionZ: 0
   hasWall: 0
-  wall: {fileID: 1449090096106160}
+  wall: {fileID: 1601832599423452}
   on: 0
-  door: {fileID: 1456232220674724}
+  door: {fileID: 1165660564651666}
   DoorOn: 0
   isDoorMode: 0
-  window: {fileID: 1485097057288532}
+  window: {fileID: 1376820609590670}
   WindowOn: 0
   isWindowMode: 0
 --- !u!114 &114943908633893288
