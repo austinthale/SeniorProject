@@ -3561,12 +3561,12 @@ MonoBehaviour:
   directionX: 0
   directionZ: 0
   hasWall: 0
-  wall: {fileID: 1215326461398742}
+  wall: {fileID: 1899085899723460}
   on: 0
-  door: {fileID: 1975222041640646}
+  door: {fileID: 1654720784208398}
   DoorOn: 0
   isDoorMode: 0
-  window: {fileID: 1950706966662766}
+  window: {fileID: 1409683392072374}
   WindowOn: 0
   isWindowMode: 0
 --- !u!114 &114769298251968726
