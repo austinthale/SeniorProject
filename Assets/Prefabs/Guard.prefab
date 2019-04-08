@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 114740226304369880}
   - component: {fileID: 208240257752565586}
   - component: {fileID: 114738100480083198}
+  - component: {fileID: 114280433853935488}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -980,6 +981,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114280433853935488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397041386312300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb382317da292314fbe0ed89b31c399d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
 --- !u!114 &114738100480083198
 MonoBehaviour:
   m_ObjectHideFlags: 1

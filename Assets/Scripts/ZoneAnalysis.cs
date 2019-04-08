@@ -10,6 +10,7 @@ public class ZoneAnalysis : MonoBehaviour {
     public float times_assialant_passed_through = 0;
     public float windows = 0;
     public float doors = 0;
+    public float walls = 0;
 
     public GameObject trigger;
 
@@ -24,29 +25,91 @@ public class ZoneAnalysis : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("herex");
-        if (collision.gameObject.GetComponent<zoneTag>())
-        {
-            print(collision.gameObject.GetComponent<zoneTag>().Type);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        print("here");
         if (other.GetComponent<zoneTag>())
         {
-            print(other.GetComponent<zoneTag>().Type);
+            if (other.GetComponent<zoneTag>().Type == zoneTag.tag.assailant)
+            {
+                times_assialant_passed_through++;
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.guard)
+            {
+                number_guards++;
+                other.GetComponent<zoneTag>().activeZones.Add(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.wall)
+            {
+                walls++;
+                other.GetComponent<zoneTag>().activeZones.Add(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.door)
+            {
+                doors++;
+                other.GetComponent<zoneTag>().activeZones.Add(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.window)
+            {
+                windows++;
+                other.GetComponent<zoneTag>().activeZones.Add(this.gameObject);
+            }
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == 11)
+        if (other.GetComponent<zoneTag>())
         {
-            number_guards--;
+            if (other.GetComponent<zoneTag>().Type == zoneTag.tag.guard)
+            {
+                number_guards--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.wall)
+            {
+                walls--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.door)
+            {
+                doors--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.window)
+            {
+                windows--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+
+        }
+    }
+
+    public void off(GameObject other)
+    {
+        if (other.GetComponent<zoneTag>())
+        {
+            if (other.GetComponent<zoneTag>().Type == zoneTag.tag.guard)
+            {
+                number_guards--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.wall)
+            {
+                walls--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.door)
+            {
+                doors--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+            else if (other.GetComponent<zoneTag>().Type == zoneTag.tag.window)
+            {
+                windows--;
+                other.GetComponent<zoneTag>().activeZones.Remove(this.gameObject);
+            }
+
         }
     }
 }
