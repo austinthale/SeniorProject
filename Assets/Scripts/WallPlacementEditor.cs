@@ -5,7 +5,14 @@ using UnityEngine.EventSystems;
 
 public class WallPlacementEditor : MonoBehaviour
 {
-
+    public enum WallType
+    {
+        None,
+        Wall,
+        Door,
+        Window
+    };
+    public WallType currentType;
     public bool directionX = false;
     public bool directionZ = false;
     public bool hasWall = false;
@@ -60,12 +67,14 @@ public class WallPlacementEditor : MonoBehaviour
             }
             wall.gameObject.SetActive(true);
             on = true;
+            currentType = WallType.Wall;
         }
         else
         {
             turnOffCameras();
             wall.gameObject.SetActive(false);
             on = false;
+            currentType = WallType.None;
         }
     }
     public void turnOffCameras()
@@ -86,10 +95,12 @@ public class WallPlacementEditor : MonoBehaviour
                 turnOffWindow();
             }
             turnOnDoor();
+            //currentType = WallType.Door;
         }
         else
         {
             turnOffDoor();
+            //currentType = WallType.None;
         }
     }
 
@@ -101,12 +112,14 @@ public class WallPlacementEditor : MonoBehaviour
         }
         door.gameObject.SetActive(true);
         DoorOn = true;
+        currentType = WallType.Door;
     }
 
     public void turnOffDoor()
     {
         door.gameObject.SetActive(false);
         DoorOn = false;
+        currentType = WallType.None;
     }
 
     public void toggleWindow()
@@ -133,11 +146,13 @@ public class WallPlacementEditor : MonoBehaviour
         }
         window.gameObject.SetActive(true);
         WindowOn = true;
+        currentType = WallType.Window;
     }
 
     public void turnOffWindow()
     {
         window.gameObject.SetActive(false);
         WindowOn = false;
+        currentType = WallType.None;
     }
 }

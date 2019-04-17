@@ -43,6 +43,13 @@ public class FloorEditorManager : MonoBehaviour
         gridManager.genZones();
     }
 
+    public void LoadGrid(int loaded)
+    {
+        gridManager.gridHeight = loaded;
+        gridManager.gridWidth = loaded;
+        gridManager.genZones();
+    }
+
     public void updateFloorSize()
     {
         floorSize = (int)slider.value * 2;
