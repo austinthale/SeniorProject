@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1730134693216356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5a3c1d3873fc241a20f81dfc0222fb, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f66829b8cb8e149a7e8135d2e8b5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 2
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1730134693216356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb382317da292314fbe0ed89b31c399d, type: 3}
+  m_Script: {fileID: 11500000, guid: 725e7aa5f05c3b74698346b8fe04e066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
