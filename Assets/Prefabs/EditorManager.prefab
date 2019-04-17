@@ -88,6 +88,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1308771423320434
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4516302127749488}
+  m_Layer: 0
+  m_Name: PropHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1428881323269790
 GameObject:
   m_ObjectHideFlags: 1
@@ -129,6 +144,22 @@ GameObject:
   - component: {fileID: 4370630914752490}
   m_Layer: 0
   m_Name: Doors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1532680929504110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4419554902123558}
+  - component: {fileID: 114087175479726770}
+  m_Layer: 0
+  m_Name: PropManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,6 +349,20 @@ Transform:
   m_Father: {fileID: 4306199420046750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4419554902123558
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532680929504110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4516302127749488}
+  m_Father: {fileID: 4747289247383096}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4508782225357832
 Transform:
   m_ObjectHideFlags: 1
@@ -357,6 +402,19 @@ Transform:
   - {fileID: 4765780110727224}
   m_Father: {fileID: 4747289247383096}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4516302127749488
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308771423320434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4419554902123558}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4557902485806286
 Transform:
@@ -415,6 +473,7 @@ Transform:
   - {fileID: 4557902485806286}
   - {fileID: 4745320854767120}
   - {fileID: 4508782225357832}
+  - {fileID: 4419554902123558}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -507,7 +566,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1884129503157620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b1b20098064c14f952741618eb7626, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d5757687c311044b997fd56da018363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 0}
@@ -518,7 +577,28 @@ MonoBehaviour:
   camManager: {fileID: 0}
   guardManager: {fileID: 0}
   sliderSize: {fileID: 0}
-  floorSize: 2
+  floorSize: 0
+--- !u!114 &114087175479726770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532680929504110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddbd1e770910794e91d7639557efd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propList: []
+  GeneralEditorManager: {fileID: 1193407751579630}
+  objectEditorPanel: {fileID: 0}
+  chairPrefab: {fileID: 1619503335000222, guid: 618fce60f0d1aba4eaf6e8a942d4080a,
+    type: 2}
+  deskPrefab: {fileID: 1828108600608622, guid: 1234115644989ff4eab5ce717a8a2c59, type: 2}
+  plantPrefab: {fileID: 1013264652045048, guid: 270c6461f909a014c923a25a24fd9079,
+    type: 2}
+  PropHolder: {fileID: 1308771423320434}
+  mainCamera: {fileID: 0}
 --- !u!114 &114306583284038676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,7 +607,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766606691542808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747b49b5a523f5d42823888324f81212, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ccedd21b294d1141aac83a61663d8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   assailantList: []
@@ -543,7 +623,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1182921718293508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5b19502f69e8e46b3d3b4729d80996, type: 3}
+  m_Script: {fileID: 11500000, guid: fc42c627be3471c47973db2d4a9bdbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   guardList: []
@@ -567,6 +647,7 @@ MonoBehaviour:
   canvas: {fileID: 0}
   guardManager: {fileID: 1182921718293508}
   assailantManager: {fileID: 1766606691542808}
+  propManager: {fileID: 1532680929504110}
   floorManager: {fileID: 1884129503157620}
 --- !u!114 &114576243351695804
 MonoBehaviour:
@@ -641,8 +722,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865909413528286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c551d7c4864767c44a7f2d11b21b78cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e55bc2689a013e42b41c2d562771199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tracked: {fileID: 0}
-  m_Size: {x: 800, y: 200, z: 800}
+  m_Size: {x: 80, y: 20, z: 80}
