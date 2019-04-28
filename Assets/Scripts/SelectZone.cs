@@ -72,12 +72,12 @@ public class SelectZone : MonoBehaviour
     {
         currentZone = passed_zone;
         //print(currentZone.name);
-        zoneMenu.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().ZoneName;
+        zoneMenu.text = currentZone.gameObject.name;//.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().ZoneName;
         threat_level_slider.value = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().threatLevel;
         threat_level_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().threatLevel.ToString();
         guard_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().number_guards.ToString();
-        window_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().windows.ToString();
-        door_amount.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().doors.ToString();
+        //window_number.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().windows.ToString();
+        //door_amount.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().doors.ToString();
         assailant_walk_through.text = currentZone.GetComponent<ZoneAnalysis>().trigger.GetComponent<ZoneAnalysis>().times_assialant_passed_through.ToString();
     }
 

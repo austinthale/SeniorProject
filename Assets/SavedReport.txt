@@ -1,0 +1,14 @@
+Analysis Report::
+
+
+
+Amount of Guards: 0
+Amount of Assailants: 0
+Amount of Windows: 0
+Amount of Doors 0
+Amount of Cameras 0
+Average assailants through per zone: 0
+Safety Rating: 100%
+
+
+Report saved to: SavedReport.txt

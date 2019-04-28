@@ -7,13 +7,13 @@ using FuzzyTools;
 
 public class EditModePanelEditor : MonoBehaviour {
 
-    [SerializeField] [ReadOnly] private Dropdown _dropdown;
-    [SerializeField] [ReadOnly] private GameObject _dropdown2;
-    [SerializeField] [ReadOnly] private GameObject _addButton;
-    [SerializeField] [ReadOnly] private GameObject _removeButton;
-    [SerializeField] [ReadOnly] private GameObject _listPanel;
-    [SerializeField] [ReadOnly] private GameObject _scrollBar;
-    [SerializeField] [ReadOnly] private GameObject _grid;
+    public Dropdown _dropdown;
+    public GameObject _dropdown2;
+    public GameObject _addButton;
+    public GameObject _removeButton;
+    public GameObject _listPanel;
+    public GameObject _scrollBar;
+    public GameObject _grid;
     public GameObject objButtonPrefab;
     public GameObject General_Manager;
     private WallEditorManager wallManager;
@@ -55,7 +55,6 @@ public class EditModePanelEditor : MonoBehaviour {
 
         changePanelView(0);
     }
-
 
     public void changePanelView(int dropdownVal)
     {

@@ -208,6 +208,7 @@ public class PropEditorManager : MonoBehaviour {
     {
         objectEditorPanel.gameObject.SetActive(false);
         StopCoroutine(zoomOut());
+        if(editModePanelEditor.getDropdownVal() == 4)
         StartCoroutine(zoomOut());
     }
 

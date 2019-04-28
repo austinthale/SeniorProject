@@ -103,6 +103,7 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(true);
             secCamCanvas.SetActive(true);
+            gridmanager.GetComponent<GenerateGrid>().triggerParent.gameObject.SetActive(true);
             //player_controller.IsSimMode = true;
             foreach (var assail in assailantList)
             {
@@ -116,6 +117,7 @@ public class UserInput : MonoBehaviour {
             ViewReset(true);
             //player_controller.stopMoving();
             isSimMode = true;
+            gridmanager.GetComponent<GenerateGrid>().triggerParent.gameObject.SetActive(true);
             StartCoroutine(simMode());
             foreach (var assail in assailantList)
             {
@@ -128,6 +130,11 @@ public class UserInput : MonoBehaviour {
         {
             ViewReset(false);
             editCanvas.SetActive(true);
+            gridmanager.GetComponent<GenerateGrid>().triggerParent.gameObject.SetActive(true);
+            if (editCanvas.GetComponent<EditModePanelEditor>().getDropdownVal() == 1)
+            {
+                GeneralEditorManager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>().camModeOn();
+            }
             gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(true);
             foreach (var w in gridmanager.GetComponent<GenerateGrid>().WallPlacementList)
             {
@@ -176,10 +183,12 @@ public class UserInput : MonoBehaviour {
 
         gridmanager.GetComponent<GenerateGrid>().WallPlacementParentObject.gameObject.SetActive(false);
         isSimMode = false;
+        gridmanager.GetComponent<GenerateGrid>().triggerParent.gameObject.SetActive(false);
         gridmanager.GetComponent<GenerateGrid>().zoneList.gameObject.SetActive(false);
         secCamCanvas.SetActive(false);
         editCanvas.SetActive(false);
         zoneCanvas.SetActive(false);
+        GeneralEditorManager.GetComponent<GeneralEditorManager>().cameraManager.GetComponent<CameraManager>().camModeOff();
         if (!allowMove && assailantList.Count > 0) {
             //player_controller.IsSimMode = false;
             turnOffAssailants();

@@ -114,6 +114,7 @@ public class GenerateGrid : MonoBehaviour
         {
             gridList[k].name = "Zone " + (k + 1);
             gridList[k].GetComponent<ZoneAnalysis>().ZoneName = "Zone " + (k + 1);
+            triggers.Add(gridList[k].GetComponent<ZoneAnalysis>().trigger);
             gridList[k].GetComponent<ZoneAnalysis>().trigger.transform.parent = triggerParent.transform;
         }
         genWallPlacement();

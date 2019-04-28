@@ -1,25 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SFB;
 
 public class SaveManager : MonoBehaviour {
 
     public GameObject GeneralEditor;
     public string SaveName = "SaveData";
+    public string path = "";
+    private string json = "";
 
     public void save()
     {
         SaveModel CurrentStatus = getSaveModel();
 
-        string json = JsonUtility.ToJson(CurrentStatus);
-        print(Application.dataPath);
-
-        System.IO.File.WriteAllText(Application.dataPath + "/" + SaveName, json);
-
+        json = JsonUtility.ToJson(CurrentStatus);
+        //print(Application.dataPath);
+        path = StandaloneFileBrowser.SaveFilePanel("Title", "", "SaveData", "txt").ToString();
+        if (!string.IsNullOrEmpty(path))
+        {
+            System.IO.File.WriteAllText(path, json);
+        }
         //readableReport();
 
         Debug.Log("Report Genereated");
     }
+
+
 
     public SaveModel getSaveModel()
     {
@@ -34,9 +41,11 @@ public class SaveManager : MonoBehaviour {
         return Save;
     }
 
-    public void LoadSave(string save)
+    public void LoadSave()
     {
-        SaveModel saveData = parse(save);
+
+
+        SaveModel saveData = parse();
         GeneralEditor.GetComponent<GeneralEditorManager>().floorManager.GetComponent<FloorEditorManager>().clearAll();
         GeneralEditor.GetComponent<GeneralEditorManager>().floorManager.GetComponent<FloorEditorManager>().LoadGrid(saveData.gridSzie);
         for (int i = 0; i < saveData.WallTypes.Count; i++)
@@ -56,14 +65,15 @@ public class SaveManager : MonoBehaviour {
         }
     }
 
-    public SaveModel parse(string file)
+    public SaveModel parse()
     {
-        string json = System.IO.File.ReadAllText(Application.dataPath + "/" + SaveName); //for testing purposes...
+        var temp = StandaloneFileBrowser.OpenFilePanel("Title", "", "txt", false);
+        path = temp[0];
+
+        json = System.IO.File.ReadAllText(path); //for testing purposes...
         //string json = System.IO.File.ReadAllText(file); //when able to select file gets figured out...
         SaveModel save = JsonUtility.FromJson<SaveModel>(json);
         return save;
     }
-
-
 
 }
